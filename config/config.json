@@ -1,0 +1,10 @@
+{
+    "server": {
+      "debug": true,
+      "appName": "salesman",
+      "validateSchemas": true
+    },
+    "mongo": {
+      "url": "mongodb://localhost/salesman"
+    }
+}

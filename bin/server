@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+//
+//  Script to keep the server started forever
+
+var pwd = process.cwd()
+	, serverBasename
+	, appName = "salesman"
+	, forever = require('forever')
+	, fs = require('fs')
+;
+
+function startServer(args) {
+	console.log('Starting ' + appName + ' server');
+	if (fs.existsSync(pwd + "/" + appName + ".log"))
+		fs.unlink(pwd + "/" + appName + ".log");
+	forever.startDaemon(pwd + "/" + serverBasename, {
+		cwd: pwd,
+		logFile: pwd + "/" + appName + ".log" // Path to log output from forever process (when daemonized)
+	});
+}
+
+function stopServer(args) {
+	console.log('Stopping ' + appName + ' server');
+	forever.stopAll().on('StopAll', function() {
+		console.log('Stopped ' + appName + ' server.');
+	});
+}
+
+function listServer(args) {
+	forever.list(true, function(err, listOfProcesses) {
+		if (listOfProcesses) {
+			console.log(listOfProcesses)
+		} else {
+			console.log('No servers running.');
+		}
+	});
+}
+
+function showUsage() {
+	console.log("Usage: /bin/server server.js start|stop|list");
+}
+
+// read args and opts
+// 3rd argument needed server.js < the serverBasename
+// 4th argument -> start, stop, restart, list to be read from forever
+
+if (process.argv.length == 4) {
+	serverBasename = process.argv[2]
+	if (process.argv[3] == "start") startServer(process.argv);
+	if (process.argv[3] == "stop") stopServer(process.argv);
+	if (process.argv[3] == "list") listServer(process.argv);
+} else {
+	showUsage();
+}
