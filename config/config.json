@@ -5,6 +5,6 @@
       "validateSchemas": true
     },
     "mongo": {
-      "url": "mongodb://localhost/salesman"
+	  "url": "mongodb://admin:I6NumDATJ4qC@127.13.147.130:27017/salesman"
     }
 }
