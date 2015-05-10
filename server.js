@@ -1,5 +1,5 @@
 /*
-	cmpe 239 realy-yelp - main server
+	salesman main server file
 */
 
 var app = require('express')()
