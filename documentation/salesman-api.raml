@@ -1,0 +1,935 @@
+#%RAML 0.8
+title: Salesman
+version: v1
+baseUri: http://localhost:3000/salesman/{version}
+
+documentation: 
+  - title: Salesman Backend API's
+    content: | 
+      Salesman - Powering the In-Store Shopping Experience Prototype
+  
+schemas:
+  - BadRequest: |
+      {
+        "status": "error",
+        "errorCode": 400,
+        "errorMessage": "Bad Request"
+      }
+  - NotFound: |
+      {
+        "status": "error",
+        "errorCode": 404,
+        "errorMessage": "Not Found"
+      }
+  - Unauthorized: |
+      {
+        "status": "error",
+        "errorCode": 401,
+        "errorMessage": "Unauthorized"
+      }
+  - InternalServerError: |
+      {
+        "status": "error",
+        "errorCode": 500,
+        "errorMessage": "Internal Server Error"
+      }
+  - ServiceUnavailable: |
+      {
+        "status": "error",
+        "errorCode": 503,
+        "errorMessage": "Service Unavailable"
+      }
+
+/auth:
+  post:
+    description: Login to salesman and retrieve access tokens
+    body:
+      application/json:
+        example: |
+          {
+            'email': 'Test.User@test.com',
+            'passsword': 'TestPassword123'
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                'accessToken': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                'tokenType': 'Bearer',
+                'tokenExpiry': 3600,
+                'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+              }
+      400:
+        body:
+          application/json:
+            schema: BadRequest
+      401:
+        body:
+          application/json:
+            schema: Unauthorized
+      404:
+        body:
+          application/json:
+            schema: NotFound
+      500:
+        body:
+          application/json:
+            schema: InternalServerError
+      503:
+        body:
+          application/json:
+            schema: ServiceUnavailable      
+
+/users:
+  post:
+    description: Create a new user or signup
+    body:
+      application/json:
+        example: |
+          {
+            'firstName': 'Test',
+            'lastName': 'User',
+            'emaiId': 'Test.User@test.com',
+            'mobile': 4084084084
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+                'firstName': 'Test',
+                'lastName': 'User',
+                'emaiId': 'Test.User@test.com',
+                'mobile': 4084084084
+              }              
+      400:
+        body:
+          application/json:
+            schema: BadRequest
+      401:
+        body:
+          application/json:
+            schema: Unauthorized
+      404:
+        body:
+          application/json:
+            schema: NotFound
+      500:
+        body:
+          application/json:
+            schema: InternalServerError
+      503:
+        body:
+          application/json:
+            schema: ServiceUnavailable
+  /{userId}:
+    get:
+      description: Get the details of a user
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+                  'firstName': 'Test',
+                  'lastName': 'User',
+                  'emaiId': 'Test.User@test.com',
+                  'mobile': 4084084084
+                }              
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable
+    put:
+      description: Change details of a user
+      body:
+        application/json:
+          example: |
+            {
+              'firstName': 'TestChange'
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+                  'firstName': 'TestChange',
+                  'lastName': 'User',
+                  'emaiId': 'Test.User@test.com',
+                  'mobile': 4084084084
+                }              
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable
+    delete:
+      description: Delete a user
+      responses:
+        204:
+          description: |
+            Successfully deleted resource(s)
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable
+    /device:
+      post:
+        description: Create a device for a user
+        body:
+          application/json:
+            example: |
+              {
+                'os': 'Android',
+                'vendorId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66',
+                'pnToken': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+              }
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    'os': 'Android',
+                    'vendorId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66',
+                    'pnToken': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66',
+                    'deviceId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+                  }
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable
+      get:
+        description: Get details of a device of a user based on device id
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    'os': 'Android',
+                    'vendorId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66',
+                    'pnToken': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66',
+                    'deviceId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+                  }
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable
+      put:
+        description: Change device of a user based on device id
+        body:
+          application/json:
+            example: |
+              {
+                'os': 'Android 5.4'
+              }
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    'os': 'Android 5.4',
+                    'vendorId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66',
+                    'pnToken': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66',
+                    'deviceId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+                  }
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable
+      delete:
+        description: Delete device of a user
+        responses:
+          204:
+            description: |
+              Successfully deleted resource(s)
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable
+    /history:
+      get:
+        description: Get shopping history of a user
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  [
+                    {
+                      'productId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                      'productName': 'Mens Shoes',
+                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                      'brand': 'Puma',
+                      'weight': '1/2 pounds',
+                      'size': '9',
+                      'listedPrice': 199,
+                      'standardPrice': 399,
+                      'color': 'blue',
+                      'purchasedOn': 1434147513
+                    }
+                  ]
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable
+
+/section:
+  post:
+    description: Create a section
+    body:
+      application/json:
+        example: |
+          {
+            'sectionName': 'Aisle 4'
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                'sectionName': 'Aisle 4',
+                'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+              }
+      400:
+        body:
+          application/json:
+            schema: BadRequest
+      401:
+        body:
+          application/json:
+            schema: Unauthorized
+      404:
+        body:
+          application/json:
+            schema: NotFound
+      500:
+        body:
+          application/json:
+            schema: InternalServerError
+      503:
+        body:
+          application/json:
+            schema: ServiceUnavailable
+  /{sectionId}:
+    get:
+      description: Get details of a section
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  'sectionName': 'Aisle 4',
+                  'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                }
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable      
+    put:
+      description: Change details of a section
+      body:
+        application/json:
+          example: |
+            {
+              'sectionName': 'Aisle 7'
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  'sectionName': 'Aisle 7',
+                  'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                }
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable     
+    delete:
+      description: Delete a section
+      responses:
+        204:
+         description: |
+           Successfully deleted resource(s)
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable
+    /categories:
+      post:
+        description: Create a category in a section
+        body:
+          application/json:
+            example: |
+              {
+                'categoryName': 'Mens shoes'
+              }
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    'categoryName': 'Mens shoes',
+                    'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                  }
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable
+      get:
+        description: Get all categories in a section
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  [
+                    {
+                      'categoryName': 'Mens shoes',
+                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                    }
+                  ]
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable
+      /{categoryId}:
+        get:
+          description: Get one category
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                      'categoryName': 'Mens shoes',
+                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                    }
+            400:
+              body:
+                application/json:
+                  schema: BadRequest
+            401:
+              body:
+                application/json:
+                  schema: Unauthorized
+            404:
+              body:
+                application/json:
+                  schema: NotFound
+            500:
+              body:
+                application/json:
+                  schema: InternalServerError
+            503:
+              body:
+                application/json:
+                  schema: ServiceUnavailable
+        put:
+          description: Change a category
+          body:
+            application/json:
+              example: |
+                {
+                  'categoryName': 'Changed'
+                }
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                      'categoryName': 'Changed',
+                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                    }
+            400:
+              body:
+                application/json:
+                  schema: BadRequest
+            401:
+              body:
+                application/json:
+                  schema: Unauthorized
+            404:
+              body:
+                application/json:
+                  schema: NotFound
+            500:
+              body:
+                application/json:
+                  schema: InternalServerError
+            503:
+              body:
+                application/json:
+                  schema: ServiceUnavailable
+        delete:
+          description: Delete a category from a section
+          responses:
+            204:
+              description: |
+                Successfully deleted resource(s)
+            400:
+              body:
+                application/json:
+                  schema: BadRequest
+            401:
+              body:
+                application/json:
+                  schema: Unauthorized
+            404:
+              body:
+                application/json:
+                  schema: NotFound
+            500:
+              body:
+                application/json:
+                  schema: InternalServerError
+            503:
+              body:
+                application/json:
+                  schema: ServiceUnavailable                  
+/beacons:
+  post:
+    description: Create a new beacon in the system admin functionality
+    body:
+      application/json:
+        example: |
+          {
+            'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+            'beaconName': 'Mens Shoes',
+            'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                'beaconName': 'Mens Shoes',
+                'dateInstalled': 1434146201
+              }
+      400:
+        body:
+          application/json:
+            schema: BadRequest
+      401:
+        body:
+          application/json:
+            schema: Unauthorized
+      404:
+        body:
+          application/json:
+            schema: NotFound
+      500:
+        body:
+          application/json:
+            schema: InternalServerError
+      503:
+        body:
+          application/json:
+            schema: ServiceUnavailable
+  /{beaconId}:
+    get:
+      description: Get details of a beacon
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                  'beaconName': 'Mens Shoes',
+                  'dateInstalled': 1434146201
+                }
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable
+    delete:
+      description: Delete a beacon from the system
+      responses:
+        204:
+          description: |
+            Successfully deleted resource(s)
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable         
+    put:
+      description: Change details of a beacon
+      body:
+        application/json:
+          example: |
+            {
+              'beaconName': 'Womens shoes'
+            } 
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                  'beaconName': 'Mens Shoes',
+                  'dateInstalled': 1434146201
+                }
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable
+    /offers:
+      get:
+        description: Get offers by a beacon id 
+        queryParameters:
+          maxCount: 
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  [
+                    {
+                      'productId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                      'productName': 'Mens Shoes',
+                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                      'brand': 'Puma',
+                      'weight': '1/2 pounds',
+                      'size': '9',
+                      'listedPrice': 199,
+                      'standardPrice': 399,
+                      'color': 'blue'
+                    }
+                  ]
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable
+/recommendations:
+  get:
+    description: Get offers based on recommendations based on shopping history
+    queryParameters:
+      maxCount: 
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  'productId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                  'productName': 'Mens Shoes',
+                  'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
+                  'brand': 'Puma',
+                  'weight': '1/2 pounds',
+                  'size': '9',
+                  'listedPrice': 199,
+                  'standardPrice': 399,
+                  'color': 'blue'
+                }
+              ]
+      400:
+        body:
+          application/json:
+            schema: BadRequest
+      401:
+        body:
+          application/json:
+            schema: Unauthorized
+      404:
+        body:
+          application/json:
+            schema: NotFound
+      500:
+        body:
+          application/json:
+            schema: InternalServerError
+      503:
+        body:
+          application/json:
+            schema: ServiceUnavailable 
