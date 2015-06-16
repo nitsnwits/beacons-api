@@ -6,7 +6,7 @@
 
 var userController = require('../../controllers/userController')
 	, errorController = require('../../controllers/errorController')
-	, baseurl = ''
+	, baseurl = '/salesman/v1'
 ;
 
 module.exports = function(app, env) {

@@ -30,6 +30,9 @@ app.use(express.static(__dirname + '/public'));
 
 //Set init configuration
 require('./config/init/config')(app, sharedEnv);
+if (!process.env.OPENSHIFT_NODEJS_IP) {
+	sharedEnv.config.mongo.url = 'mongodb://localhost/salesman'
+}
 require('./config/init/errorHandler')(app, sharedEnv);
 require('./config/init/mongodb')(app, sharedEnv);
 require('./config/init/routes')(app, sharedEnv);

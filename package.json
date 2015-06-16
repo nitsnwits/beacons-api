@@ -1,7 +1,27 @@
 {
-  "name": "salesman",
-  "description": "Powering In-Store Shopping experience",
-  "version": "1.0.0",
+	"name": "salesman",
+	"description": "Powering In-Store Shopping experience",
+	"version": "0.0.1",
+	"main": "server.js",
+	"scripts": {
+		"start": "node ./server.js",
+		"test": "./bin/test.js"
+	},	
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nitsnwits/new-node.git"
+	},
+	"keywords": [
+		"node",
+		"node.js",
+		"javascript"
+	],
+	"author": "Neeraj Sharma",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/nitsnwits/beacons-api.git/issues"
+	},
+	"homepage": "https://github.com/nitsnwits/beacons-api.git",
 	"dependencies": {
 		"express": ">4",
 		"underscore": "1.5.2",
@@ -19,9 +39,7 @@
 		"hogan-express": "*",
 		"byline": "*",
 		"os-utils": "*",
-		"socket.io": "*"
-  	},
-	"scripts": {
-		"start": "node ./server.js"
-	}
+		"socket.io": "*",
+		"config": "~1.12.0"
+  	}
 }

@@ -39,8 +39,7 @@ module.exports.postUser = function(req, res) {
 			return res.render('Errorpage');
 		}
 		logger.log('POST /user response: ' + JSON.stringify(newUser));
-		res.locals.userName = newUser.first_name;
-		return res.render('Home');
+		return res.status(200).send(newUser)
 	});
 }
 
@@ -63,9 +62,9 @@ module.exports.getUser = function(req, res) {
 }
 
 module.exports.postLogin = function(req, res) {
-	logger.log("POST /login request received username=" + req.body.loginname);
+	logger.log("POST /login request received username=" + req.body.email);
 	// logger.log('blah' + JSON.stringify(req.body));
-	var username = req.body.loginname;
+	var username = req.body.email;
 	var password = req.body.password;
 	userModel.dbLoginUser(username, password, function(error, user) {
 		if (error) {
@@ -78,9 +77,7 @@ module.exports.postLogin = function(req, res) {
 			return res.render('Errorpage');
 		}
 		if (user.email === username && user.password === password) {
-			res.locals.userName = user.first_name;
-			res.locals.businesses = user.businesses;
-			res.render('Home');
+			res.status(200).send(user);
 			return;
 		} else {
 			res.locals.errorMessage = "Sorry " + username + ". We did not match any credentials. Do you want to try again?";

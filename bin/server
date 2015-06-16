@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-//
 //  Script to keep the server started forever
 
 var pwd = process.cwd()
