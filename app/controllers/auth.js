@@ -130,7 +130,7 @@ module.exports.resetPassword = function(req, res) {
             log.info('Unable to send mail', err);
           }
         });      
-        return res.status(200).send(user);        
+        return res.status(200).send({message: 'Your new password has been e-mailed to you.'});        
       });
     });
   });
