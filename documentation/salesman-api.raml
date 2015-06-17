@@ -89,10 +89,12 @@ schemas:
       application/json:
         example: |
           {
-            'firstName': 'Test',
-            'lastName': 'User',
-            'emaiId': 'Test.User@test.com',
-            'mobile': 4084084084
+              "name": {
+                  "first": "test1",
+                  "last": "sharma"
+              },
+              "password": "abcd",
+              "email": "test1@gmail.com"
           }
     responses:
       200:
@@ -100,12 +102,15 @@ schemas:
           application/json:
             example: |
               {
-                'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
-                'firstName': 'Test',
-                'lastName': 'User',
-                'emaiId': 'Test.User@test.com',
-                'mobile': 4084084084
-              }              
+                "updated": 1434516243822,
+                "created": 1434516243822,
+                "userId": "bc3265da-4c70-4e32-9141-dede348fa33a",
+                "name": {
+                  "first": "test1",
+                  "last": "sharma"
+                },
+                "email": "test1@gmail.com"
+              }
       400:
         body:
           application/json:
@@ -135,12 +140,15 @@ schemas:
             application/json:
               example: |
                 {
-                  'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
-                  'firstName': 'Test',
-                  'lastName': 'User',
-                  'emaiId': 'Test.User@test.com',
-                  'mobile': 4084084084
-                }              
+                  "updated": 1434516243822,
+                  "created": 1434516243822,
+                  "userId": "bc3265da-4c70-4e32-9141-dede348fa33a",
+                  "name": {
+                    "first": "test1",
+                    "last": "sharma"
+                  },
+                  "email": "test1@gmail.com"
+                }             
         400:
           body:
             application/json:

@@ -176,18 +176,23 @@
   "errorMessage": "Service Unavailable"
 }
 </code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="users" class="panel-title">/users</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users"><span class="parent"></span>/users</a> <span class="methods"><a href="#users_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_users" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create a new user or signup</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/users</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create a new user or signup</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users_post_request" data-toggle="tab">Request</a></li><li><a href="#users_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'firstName': 'Test',
-  'lastName': 'User',
-  'emaiId': 'Test.User@test.com',
-  'mobile': 4084084084
+    "name": {
+        "first": "test1",
+        "last": "sharma"
+    },
+    "password": "abcd",
+    "email": "test1@gmail.com"
 }
 </code></pre></div><div class="tab-pane" id="users_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
-  'firstName': 'Test',
-  'lastName': 'User',
-  'emaiId': 'Test.User@test.com',
-  'mobile': 4084084084
-}              
+  "updated": 1434516243822,
+  "created": 1434516243822,
+  "userId": "bc3265da-4c70-4e32-9141-dede348fa33a",
+  "name": {
+    "first": "test1",
+    "last": "sharma"
+  },
+  "email": "test1@gmail.com"
+}
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
   "errorCode": 400,
@@ -214,12 +219,15 @@
   "errorMessage": "Service Unavailable"
 }
 </code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users__userId_"><span class="parent">/users</span>/{userId}</a> <span class="methods"><a href="#users__userId__get"><span class="badge badge_get">get</span></a> <a href="#users__userId__put"><span class="badge badge_put">put</span></a> <a href="#users__userId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_users__userId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users__userId__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get the details of a user</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#users__userId__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Change details of a user</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#users__userId__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete a user</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__userId__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/users</span>/{userId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get the details of a user</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__userId__get_request" data-toggle="tab">Request</a></li><li><a href="#users__userId__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__userId__get_request"><h3>URI Parameters</h3><ul><li><strong>userId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="users__userId__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
-  'firstName': 'Test',
-  'lastName': 'User',
-  'emaiId': 'Test.User@test.com',
-  'mobile': 4084084084
-}              
+  "updated": 1434516243822,
+  "created": 1434516243822,
+  "userId": "bc3265da-4c70-4e32-9141-dede348fa33a",
+  "name": {
+    "first": "test1",
+    "last": "sharma"
+  },
+  "email": "test1@gmail.com"
+}             
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
   "errorCode": 400,

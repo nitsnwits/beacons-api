@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"main": "server.js",
 	"scripts": {
-		"start": "node ./server.js",
+		"start": "node server.js | ./node_modules/bunyan/bin/bunyan -o short",
 		"test": "./bin/test.js"
 	},	
 	"repository": {
@@ -33,6 +33,7 @@
 		"bunyan": "1.x.x",
 		"bcrypt": "0.x.x",
 		"async": "1.x.x",
+		"raml2html": "2.x.x",
 		"html": "0.0.9",
 		"ejs": "~2.3.1",
 		"body-parser": "~1.0.1",
