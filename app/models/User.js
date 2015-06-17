@@ -16,7 +16,9 @@ var user = {
   email: {type: String, unique: true},
   created: {type: Number},
   updated: {type: Number},
-  userId: {type: String}
+  userId: {type: String},
+  accessToken: {type: String},
+  verified: {type: Boolean}
 }
 var UserSchema = new mongoose.Schema(user, {strict: false, autoIndex: true});
 //UserSchema.set('toJSON', { virtuals: true });
@@ -44,11 +46,11 @@ UserSchema.pre('save', function(next) {
     if (err) return next(err);
 
     // hash the password using our new salt
-    bcrypt.hash(self.password, salt, function(err, hash) {
+    bcrypt.hash(self.get('password'), salt, function(err, hash) {
       if (err) return next(err);
 
-        // override the cleartext password with the hashed one
-      self.password = hash;
+      // override the cleartext password with the hashed one
+      self.set('password', hash);
       next();
     });
   });
@@ -81,6 +83,15 @@ UserSchema.statics.findById = function(userId, cb) {
     if (err) return cb(err);
     if (validator.isNull(user)) return cb(null, null);
     return cb(null, user.toObject());
+  }); 
+}
+
+// Find users by id, return doc to modify
+UserSchema.statics.findByIdForModify = function(userId, cb) {
+  this.findOne({userId: userId}, function(err, user) {
+    if (err) return cb(err);
+    if (validator.isNull(user)) return cb(null, null);
+    return cb(null, user);
   }); 
 }
 

@@ -1,8 +1,10 @@
 // config file for the app
 module.exports = {
 	app: {
-		name: 'salesman',
-		baseurl: '/api/v1'
+		name: 'Salesman',
+		baseurl: '/api/v1',
+		domain: 'http://salesman-betasjsu.rhcloud.com',
+		passwordLength: 8
 	},
 	database: {
 		name: 'mongodb',
@@ -25,6 +27,12 @@ module.exports = {
 		secure: false,
 		validateSchemas: false,
 		env: 'development',
-		debug: true
+		debug: true,
+		resetPasswordLinkExpiry: 300
+	},
+	mailer: {
+		email: 'salesman.betasjsu@gmail.com',
+		password: 'Salesman',
+		service: 'gmail'		
 	}
 }

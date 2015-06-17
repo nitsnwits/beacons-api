@@ -3,6 +3,7 @@
  */
 
 var uuid = require('node-uuid');
+var randomstring = require('randomstring');
 
 module.exports = function(app) {
   var utils = {}
@@ -22,6 +23,13 @@ module.exports = function(app) {
         delete ret.password;
       }
     }
+  }
+  // access token saves userId:email:loginTime
+  utils.valueForAccessToken = function (userId, email) {
+    return userId + ':' + email + ':' + utils.timestamp();
+  }
+  utils.randomstring = function() {
+    return randomstring.generate(app.locals.config.app.passwordLength);
   }
   app.locals.utils = utils;
   return;
