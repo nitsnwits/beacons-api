@@ -17,9 +17,9 @@ module.exports = {
 	},
 	cache: {
 		name: 'redis',
-		redis: {
-			url: ''
-		}
+		openshift: process.env.OPENSHIFT_REDIS_HOST
+						? 'ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5'
+						: undefined
 	},
 	server: {
 		ip: process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
