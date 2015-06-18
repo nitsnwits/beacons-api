@@ -41,7 +41,7 @@ module.exports.verifyAccessToken = function(req, res, next) {
     log.info('No access token received');
     return res.status(401).send(app.locals.errors.code401);
   }
-  app.locals.cache.createClient().get(req.headers.authorization, function(err, exists, resp) {
+  cache.get(req.headers.authorization, function(err, exists, resp) {
     if (err) {
       log.warn('Unable to read from cache', err);
       return res.status(500).send(app.locals.errors.code500);
