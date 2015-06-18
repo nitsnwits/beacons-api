@@ -145,11 +145,79 @@
   'passsword': 'TestPassword123'
 }
 </code></pre></div><div class="tab-pane" id="auth_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'accessToken': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-  'tokenType': 'Bearer',
-  'tokenExpiry': 3600,
-  'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+  "updated": 1434607925152,
+  "created": 1434607502058,
+  "userId": "e397ff6d-6b26-4f4f-9ed1-92fc672e2397",
+  "accessToken": "e13388d4-9a39-4cd3-bda0-96221c43f0fb",
+  "name": {
+    "first": "neeraj",
+    "last": "sharma"
+  },
+  "email": "nitsnwits@gmail.com",
+  "verified": true
 }
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 503,
+  "errorMessage": "Service Unavailable"
+}
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_auth_reset_password"><span class="parent">/auth</span>/reset/password</a> <span class="methods"><a href="#auth_reset_password_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_auth_reset_password" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#auth_reset_password_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Reset a user&#39;s password, sends e-mail to a user if the user is verified</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="auth_reset_password_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/auth</span>/reset/password</h4></div><div class="modal-body"><div class="alert alert-info"><p>Reset a user&#39;s password, sends e-mail to a user if the user is verified</p></div><ul class="nav nav-tabs"><li class="active"><a href="#auth_reset_password_post_request" data-toggle="tab">Request</a></li><li><a href="#auth_reset_password_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="auth_reset_password_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "email": "nitsnwits@gmail.com"
+}
+</code></pre></div><div class="tab-pane" id="auth_reset_password_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "url": "http://salesman-betasjsu.rhcloud.com/api/v1/reset/password/d7a6c474-61de-40e3-b1f3-3c232ea5621e"
+}
+{                
+  "message": "Please verify your e-mail before resetting your password."
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 503,
+  "errorMessage": "Service Unavailable"
+}
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_auth_reset_password__key_"><span class="parent">/auth</span>/reset/password/{key}</a> <span class="methods"><a href="#auth_reset_password__key__get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_auth_reset_password__key_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#auth_reset_password__key__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Hit the link/url received in reset password api and system will send a new password to user</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="auth_reset_password__key__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/auth</span>/reset/password/{key}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Hit the link/url received in reset password api and system will send a new password to user</p></div><ul class="nav nav-tabs"><li class="active"><a href="#auth_reset_password__key__get_request" data-toggle="tab">Request</a></li><li><a href="#auth_reset_password__key__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="auth_reset_password__key__get_request"><h3>URI Parameters</h3><ul><li><strong>key</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="auth_reset_password__key__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  message: "Your new password has been e-mailed to you."
+}               
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
   "errorCode": 400,
@@ -184,14 +252,16 @@
     "email": "test1@gmail.com"
 }
 </code></pre></div><div class="tab-pane" id="users_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  "updated": 1434516243822,
-  "created": 1434516243822,
-  "userId": "bc3265da-4c70-4e32-9141-dede348fa33a",
+  "updated": 1434609990866,
+  "created": 1434607502058,
+  "userId": "e397ff6d-6b26-4f4f-9ed1-92fc672e2397",
+  "accessToken": "e13388d4-9a39-4cd3-bda0-96221c43f0fb",
   "name": {
-    "first": "test1",
+    "first": "neeraj",
     "last": "sharma"
   },
-  "email": "test1@gmail.com"
+  "email": "nitsnwits@gmail.com",
+  "verified": true
 }
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
@@ -219,15 +289,17 @@
   "errorMessage": "Service Unavailable"
 }
 </code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users__userId_"><span class="parent">/users</span>/{userId}</a> <span class="methods"><a href="#users__userId__get"><span class="badge badge_get">get</span></a> <a href="#users__userId__put"><span class="badge badge_put">put</span></a> <a href="#users__userId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_users__userId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users__userId__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get the details of a user</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#users__userId__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Change details of a user</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#users__userId__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete a user</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__userId__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/users</span>/{userId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get the details of a user</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__userId__get_request" data-toggle="tab">Request</a></li><li><a href="#users__userId__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__userId__get_request"><h3>URI Parameters</h3><ul><li><strong>userId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="users__userId__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  "updated": 1434516243822,
-  "created": 1434516243822,
-  "userId": "bc3265da-4c70-4e32-9141-dede348fa33a",
+  "updated": 1434609990866,
+  "created": 1434607502058,
+  "userId": "e397ff6d-6b26-4f4f-9ed1-92fc672e2397",
+  "accessToken": "e13388d4-9a39-4cd3-bda0-96221c43f0fb",
   "name": {
-    "first": "test1",
+    "first": "neeraj",
     "last": "sharma"
   },
-  "email": "test1@gmail.com"
-}             
+  "email": "nitsnwits@gmail.com",
+  "verified": true
+}           
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
   "errorCode": 400,
@@ -289,6 +361,34 @@
   "errorMessage": "Service Unavailable"
 }
 </code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__userId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/users</span>/{userId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete a user</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__userId__delete_request" data-toggle="tab">Request</a></li><li><a href="#users__userId__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__userId__delete_request"><h3>URI Parameters</h3><ul><li><strong>userId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="users__userId__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>Successfully deleted resource(s)</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 503,
+  "errorMessage": "Service Unavailable"
+}
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users__userId__verify"><span class="parent">/users/{userId}</span>/verify</a> <span class="methods"><a href="#users__userId__verify_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_users__userId__verify" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users__userId__verify_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Verify a user&#39;s e-mail using the link received in the e-mail</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__userId__verify_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/users/{userId}</span>/verify</h4></div><div class="modal-body"><div class="alert alert-info"><p>Verify a user&#39;s e-mail using the link received in the e-mail</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__userId__verify_get_request" data-toggle="tab">Request</a></li><li><a href="#users__userId__verify_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__userId__verify_get_request"><h3>URI Parameters</h3><ul><li><strong>userId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="users__userId__verify_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  message: "Your e-mail has been verified."
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
   "errorCode": 400,
   "errorMessage": "Bad Request"
