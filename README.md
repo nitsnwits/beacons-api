@@ -11,4 +11,6 @@ To run the server for production:
 
 [Visit API Documentation](https://nitsnwits.github.io/beacons-api/salesman-api.html)
 
+[Jenkins Build Status](https://jenkins-betasjsu.rhcloud.com/job/salesman-build)
+
 Team Members: Neeraj Sharma, Jinali Jhaveri, Rucha Katakwar, Sarath Gupta

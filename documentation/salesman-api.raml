@@ -56,10 +56,16 @@ schemas:
           application/json:
             example: |
               {
-                'accessToken': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-                'tokenType': 'Bearer',
-                'tokenExpiry': 3600,
-                'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
+                "updated": 1434607925152,
+                "created": 1434607502058,
+                "userId": "e397ff6d-6b26-4f4f-9ed1-92fc672e2397",
+                "accessToken": "e13388d4-9a39-4cd3-bda0-96221c43f0fb",
+                "name": {
+                  "first": "neeraj",
+                  "last": "sharma"
+                },
+                "email": "nitsnwits@gmail.com",
+                "verified": true
               }
       400:
         body:
@@ -80,7 +86,80 @@ schemas:
       503:
         body:
           application/json:
-            schema: ServiceUnavailable      
+            schema: ServiceUnavailable
+
+  /reset/password:
+    post:
+      description: Reset a user's password, sends e-mail to a user if the user is verified
+      body:
+        application/json:
+          example: |
+            {
+              "email": "nitsnwits@gmail.com"
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "url": "http://salesman-betasjsu.rhcloud.com/api/v1/reset/password/d7a6c474-61de-40e3-b1f3-3c232ea5621e"
+                }
+                {                
+                  "message": "Please verify your e-mail before resetting your password."
+                }
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable
+
+  /reset/password/{key}:
+    get:
+      description: Hit the link/url received in reset password api and system will send a new password to user
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  message: "Your new password has been e-mailed to you."
+                }               
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable              
 
 /users:
   post:
@@ -102,14 +181,16 @@ schemas:
           application/json:
             example: |
               {
-                "updated": 1434516243822,
-                "created": 1434516243822,
-                "userId": "bc3265da-4c70-4e32-9141-dede348fa33a",
+                "updated": 1434609990866,
+                "created": 1434607502058,
+                "userId": "e397ff6d-6b26-4f4f-9ed1-92fc672e2397",
+                "accessToken": "e13388d4-9a39-4cd3-bda0-96221c43f0fb",
                 "name": {
-                  "first": "test1",
+                  "first": "neeraj",
                   "last": "sharma"
                 },
-                "email": "test1@gmail.com"
+                "email": "nitsnwits@gmail.com",
+                "verified": true
               }
       400:
         body:
@@ -140,15 +221,17 @@ schemas:
             application/json:
               example: |
                 {
-                  "updated": 1434516243822,
-                  "created": 1434516243822,
-                  "userId": "bc3265da-4c70-4e32-9141-dede348fa33a",
+                  "updated": 1434609990866,
+                  "created": 1434607502058,
+                  "userId": "e397ff6d-6b26-4f4f-9ed1-92fc672e2397",
+                  "accessToken": "e13388d4-9a39-4cd3-bda0-96221c43f0fb",
                   "name": {
-                    "first": "test1",
+                    "first": "neeraj",
                     "last": "sharma"
                   },
-                  "email": "test1@gmail.com"
-                }             
+                  "email": "nitsnwits@gmail.com",
+                  "verified": true
+                }           
         400:
           body:
             application/json:
@@ -235,6 +318,38 @@ schemas:
           body:
             application/json:
               schema: ServiceUnavailable
+    /verify:
+      get:
+        description: Verify a user's e-mail using the link received in the e-mail
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    message: "Your e-mail has been verified."
+                  }
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable                               
+
     /device:
       post:
         description: Create a device for a user
