@@ -74,7 +74,7 @@ module.exports.postResetPassword = function(req, res) {
     }
     if (!user.verified) {
       log.info('User email not verified');
-      return res.status(200).send(user);
+      return res.status(200).send({message: 'Please verify your e-mail before resetting your password.'});
     }
     // send a link to user if user is verified
     var resetPasswordKey = app.locals.utils.uuid();

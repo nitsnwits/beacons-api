@@ -9,7 +9,7 @@ module.exports = function(app) {
 	var baseurl = app.locals.config.app.baseurl;
 
 	// middleware - load and verify user from the token
-	app.all(baseurl + '/users/*', authController.verifyAccessToken);
+	// app.all(baseurl + '/users/*', authController.verifyAccessToken);
 	
 
 	// Deliver angular app for web backend
@@ -24,6 +24,7 @@ module.exports = function(app) {
 	
 	// Users routes
 	app.post(baseurl + '/users', userController.verifyUser, userController.postUser);
-	app.get(baseurl + '/users/:user_id', userController.getUser);
+	app.get(baseurl + '/users/:user_id', authController.verifyAccessToken, userController.getUser);
+	app.get(baseurl + '/users/:user_id/verify', userController.verifyEmail);
 	//app.delete(baseurl + '/users/:user_id', userController.deleteUser);
 }

@@ -52,7 +52,11 @@ module.exports.postUser = function(req, res) {
         log.warn('Unable to cache objects', err);
       }
     });
-    mailer.email(user.email, 'Welcome dear ' + user.name.first, 'welcome', function(err, resp) {
+    var verifyEmailLink = app.locals.utils.verifyEmailLink(user.userId);
+    // TODO: Have functions for each type of e-mails, fixtures
+    var mailText = 'Welcome dear ' + app.locals.utils.capitalizeFirstLetter(user.name.first)  + '\n' +
+                    'Verify your email by clicking at ' + verifyEmailLink;
+    mailer.email(user.email, mailText, 'welcome', function(err, resp) {
       if (err) {
         log.info('Unable to send mail', err);
       }
@@ -79,5 +83,40 @@ module.exports.getUser = function(req, res) {
     }
     return res.status(200).send(user);
   });
+}
+
+// @GET Verify user's email
+module.exports.verifyEmail = function(req, res) {
+  if (!req.params.user_id || !validator.isUUID(req.params.user_id)) {
+    return res.status(400).send(app.locals.errors.code400);
+  }
+  User.findByIdForModify(req.params.user_id, function(err, user) {
+    if (err) {
+      log.info('Error from database finding user', err);
+      return res.status(500).send(app.locals.errors.code500);
+    }
+    if (validator.isNull(user)) {
+      log.info('User not found');
+      return res.status(404).send(app.locals.errors.code404);
+    }
+    if (user.get('verified')) {
+      log.info('User already verified');
+      return res.status(200).send({message: 'Your e-mail has already been verified.'});
+    }
+    user.set('verified', true);
+    user.save(function(err) {
+      if (err) {
+        log.info('Error from database saving user', err);
+        return res.status(500).send(app.locals.errors.code500);
+      }
+      var mailText = 'Thank you for verifying your e-mail ' + app.locals.utils.capitalizeFirstLetter(user.get('name.first'));
+      mailer.email(user.get('email'), mailText, 'verifiedEmail', function(err, resp) {
+        if (err) {
+          log.info('Unable to send mail', err);
+        }
+      });
+      return res.status(200).send({message: 'Your e-mail has been verified'});
+    })
+  });  
 }
 
