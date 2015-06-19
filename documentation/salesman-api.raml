@@ -253,12 +253,14 @@ schemas:
             application/json:
               schema: ServiceUnavailable
     put:
-      description: Change details of a user
+      description: Change details of a user, A user can only change his name
       body:
         application/json:
           example: |
             {
-              'firstName': 'TestChange'
+                "name": {
+                    "first": "neerajUpdate"
+                }
             }
       responses:
         200:
@@ -266,12 +268,17 @@ schemas:
             application/json:
               example: |
                 {
-                  'userId': '22f3bc90-7cf8-11e4-b4a9-0800200c9a66'
-                  'firstName': 'TestChange',
-                  'lastName': 'User',
-                  'emaiId': 'Test.User@test.com',
-                  'mobile': 4084084084
-                }              
+                  "updated": 1434698488362,
+                  "created": 1434643253341,
+                  "userId": "25d1be1b-c34c-4393-b8b8-8f28c9d238fc",
+                  "accessToken": "3366d96a-b137-47ae-a807-424fdac82fcf",
+                  "name": {
+                    "first": "neerajUpdate",
+                    "last": "sharma"
+                  },
+                  "email": "nitsnwits@gmail.com",
+                  "verified": true
+                }             
         400:
           body:
             application/json:
@@ -294,6 +301,12 @@ schemas:
               schema: ServiceUnavailable
     delete:
       description: Delete a user
+      body:
+        application/json:
+          example: |
+            {
+              "code": "Are you sure you want to delete this user?"
+            }
       responses:
         204:
           description: |
@@ -349,6 +362,52 @@ schemas:
             body:
               application/json:
                 schema: ServiceUnavailable                               
+    /password:
+      put:
+        description: Change a user's password only
+        body:
+          application/json:
+            example: |
+              {
+                  "password": "new"
+              }
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    "updated": 1434698612808,
+                    "created": 1434643253341,
+                    "userId": "25d1be1b-c34c-4393-b8b8-8f28c9d238fc",
+                    "accessToken": "3366d96a-b137-47ae-a807-424fdac82fcf",
+                    "name": {
+                      "first": "neeraj",
+                      "last": "sharma"
+                    },
+                    "email": "nitsnwits@gmail.com",
+                    "verified": true
+                  }
+          400:
+            body:
+              application/json:
+                schema: BadRequest
+          401:
+            body:
+              application/json:
+                schema: Unauthorized
+          404:
+            body:
+              application/json:
+                schema: NotFound
+          500:
+            body:
+              application/json:
+                schema: InternalServerError
+          503:
+            body:
+              application/json:
+                schema: ServiceUnavailable   
 
     /device:
       post:

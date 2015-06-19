@@ -22,6 +22,10 @@ module.exports.postAuth = function(req, res) {
       log.warn('Error from database reading user', err);
       return res.status(500).send(app.locals.errors.code500);
     }
+    if (validator.isNull(user)) {
+      log.info('User not found');
+      return res.status(404).send(app.locals.errors.code404);
+    }    
     if (!isMatch) {
       return res.status(401).send(app.locals.errors.code401);
     }

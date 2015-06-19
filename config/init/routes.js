@@ -25,6 +25,9 @@ module.exports = function(app) {
 	// Users routes
 	app.post(baseurl + '/users', userController.verifyUser, userController.postUser);
 	app.get(baseurl + '/users/:user_id', authController.verifyAccessToken, userController.getUser);
+	app.put(baseurl + '/users/:user_id', authController.verifyAccessToken, userController.putUser);
+	app.delete(baseurl + '/users/:user_id', authController.verifyAccessToken, userController.deleteUser);
 	app.get(baseurl + '/users/:user_id/verify', userController.verifyEmail);
-	//app.delete(baseurl + '/users/:user_id', userController.deleteUser);
+	app.put(baseurl + '/users/:user_id/password', authController.verifyAccessToken, userController.putUserPassword);
+	
 }
