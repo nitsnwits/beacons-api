@@ -83,7 +83,7 @@ module.exports.postResetPassword = function(req, res) {
         log.warn('Unable to cache objects', err);
         return res.status(500).send(app.locals.errors.code500);
       }
-      var resetPasswordLink = url.format(app.locals.config.app.domain  + app.locals.config.app.baseurl + '/reset/password/' + resetPasswordKey);
+      var resetPasswordLink = url.format(app.locals.config.app.domain  + app.locals.config.app.baseurl + '/auth/reset/password/' + resetPasswordKey);
       mailer.email(user.email, resetPasswordLink, 'resetPassword', function(err, resp) {
         if (err) {
           log.info('Unable to send mail', err);
