@@ -95,6 +95,15 @@ UserSchema.statics.findByIdForModify = function(userId, cb) {
   }); 
 }
 
+// Remoe a doc by id, return the doc removed
+UserSchema.statics.removeById = function(userId, cb) {
+  this.findOne({userId: userId}).remove(function(err, user) {
+    if (err) return cb(err);
+    if (validator.isNull(user)) return cb(null, null);
+    return cb(null, user);    
+  })
+}
+
 // specify the transform schema option
 if (!UserSchema.options.toObject) UserSchema.options.toObject = {};
 UserSchema.options.toObject.transform = app.locals.utils.transform();

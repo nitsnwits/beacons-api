@@ -19,12 +19,15 @@ module.exports = function(app) {
 	
 	// Auth
 	app.post(baseurl + '/auth', authController.postAuth);
-	app.post(baseurl + '/reset/password', authController.postResetPassword);
-	app.get(baseurl + '/reset/password/:key', authController.resetPassword);
+	app.post(baseurl + '/auth/reset/password', authController.postResetPassword);
+	app.get(baseurl + '/auth/reset/password/:key', authController.resetPassword);
 	
 	// Users routes
 	app.post(baseurl + '/users', userController.verifyUser, userController.postUser);
 	app.get(baseurl + '/users/:user_id', authController.verifyAccessToken, userController.getUser);
+	app.put(baseurl + '/users/:user_id', authController.verifyAccessToken, userController.putUser);
+	app.delete(baseurl + '/users/:user_id', authController.verifyAccessToken, userController.deleteUser);
 	app.get(baseurl + '/users/:user_id/verify', userController.verifyEmail);
-	//app.delete(baseurl + '/users/:user_id', userController.deleteUser);
+	app.put(baseurl + '/users/:user_id/password', authController.verifyAccessToken, userController.putUserPassword);
+	
 }
