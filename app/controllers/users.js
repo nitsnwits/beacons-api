@@ -10,6 +10,7 @@ var async = require('async');
 var _ = require('underscore');
 var cache = app.locals.cache.createClient();
 var mailer = require('../../lib/mailer-client');
+var awsClient = require('../../lib/aws-client').createClient();
 
 // TODO: fix root
 module.exports.getRoot = function(req, res) {
@@ -132,7 +133,7 @@ module.exports.putUser = function putUser(req, res) {
   }
   User.findByIdForModify(req.params.user_id, function(err, user) {
     if (err) {
-      log.warn('Error from database');
+      log.warn('Error from database', err);
       return res.status(500).send(app.locals.errors.code500);
     }
     if (validator.isNull(user)) {
@@ -145,7 +146,7 @@ module.exports.putUser = function putUser(req, res) {
     }
     user.save(function(err) {
       if (err) {
-        log.warn('Error from database');
+        log.warn('Error from database', err);
         return res.status(500).send(app.locals.errors.code500);
       }
       return res.status(200).send(user.toObject());
@@ -164,7 +165,7 @@ module.exports.putUserPassword = function putUserPassword(req, res) {
   }
   User.findByIdForModify(req.params.user_id, function(err, user) {
     if (err) {
-      log.warn('Error from database');
+      log.warn('Error from database', err);
       return res.status(500).send(app.locals.errors.code500);
     }
     if (validator.isNull(user)) {
@@ -190,7 +191,7 @@ module.exports.deleteUser = function deleteUser(req, res) {
   }
   User.removeById(req.params.user_id, function(err, user) {
     if (err) {
-      log.warn('Error from database');
+      log.warn('Error from database', err);
       return res.status(500).send(app.locals.errors.code500);
     }
     if (validator.isNull(user)) {
@@ -201,3 +202,52 @@ module.exports.deleteUser = function deleteUser(req, res) {
   });
 }
 
+// @POST /users/:user_id/photo upload a new photo for the user
+module.exports.postUserPhoto = function postUserPhoto(req, res) {
+  if (!req.params.user_id || !validator.isUUID(req.params.user_id)) {
+    return res.status(400).send(app.locals.errors.code400);
+  }
+  User.findByIdForModify(req.params.user_id, function(err, user) {
+    if (err) {
+      log.warn('Error from database', err);
+      return res.status(500).send(app.locals.errors.code500);
+    }
+    if (validator.isNull(user)) {
+      log.info('User not found');
+      return res.status(404).send(app.locals.errors.code404);
+    }
+    if (req.headers['content-type'] !== 'application/png') {
+      log.info('Unsupported content type received');
+      return res.status(400).send(app.locals.errors.code400);
+    }
+    var key = user.get('userId');
+    var length = req.headers['content-length'];
+    var photoBuffer = new Buffer('');
+    req.on('data', function(chunk) {
+      photoBuffer = Buffer.concat([photoBuffer, chunk]);
+    });
+    req.on('end', function() {
+      awsClient.upload(key, photoBuffer, length, function(err, data) {
+        if (err) {
+          // in case of an error, set the photo back to default
+          user.setDefaultPhotoById(key, function(error) {
+            if (error) {
+              log.warn('Error from database');
+            }
+            log.warn('Error from S3, reset user photo to default', err);
+          });
+        }
+        log.info('Image uploaded successfully');
+      });
+      var photoUrl = app.locals.config.aws.s3.s3url + key;
+      user.set('photo', photoUrl);
+      user.save(function(err) {
+        if (err) {
+          log.warn('Error from database', err);
+          return res.status(500).send(app.locals.errors.code500);
+        }
+        return res.status(200).send(user.toObject());
+      });
+    });
+  });  
+}

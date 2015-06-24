@@ -52,7 +52,11 @@ module.exports.verifyAccessToken = function(req, res, next) {
     }
     if (!exists) {
       log.info('Non existing access token received');
-      return res.status(401).send(app.local.errors.code401);
+      return res.status(401).send(app.locals.errors.code401);
+    }
+    if (validator.isNull(resp)) {
+      log.info('Response null from cache');
+      return res.status(401).send(app.locals.errors.code401);
     }
     var cacheInfo = resp.split(':');
     req.userId = cacheInfo[0];
