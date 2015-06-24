@@ -216,7 +216,7 @@ module.exports.postUserPhoto = function postUserPhoto(req, res) {
       log.info('User not found');
       return res.status(404).send(app.locals.errors.code404);
     }
-    if (req.headers['content-type'] !== 'application/png') {
+    if (req.headers['content-type'] !== 'image/png') {
       log.info('Unsupported content type received');
       return res.status(400).send(app.locals.errors.code400);
     }
