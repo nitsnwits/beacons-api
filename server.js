@@ -21,6 +21,7 @@ app.enable('view cache');
 app.engine('html', require('hogan-express'));
 
 // initialization
+require('./config/init/aws')(app);
 require('./config/init/cache')(app);
 require('./config/init/utils')(app);
 require('./config/init/errors')(app);

@@ -5,6 +5,7 @@ var app = require('../../server');
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 var validator = require('validator');
+var defaultPhoto = app.locals.config.app.domain + app.locals.config.app.defaultPhoto;
 
 // Used to generate password hash
 var SALT_WORK_FACTOR = 10;
@@ -18,7 +19,8 @@ var user = {
   updated: {type: Number},
   userId: {type: String},
   accessToken: {type: String},
-  verified: {type: Boolean}
+  verified: {type: Boolean},
+  photo: {type: String, default: defaultPhoto}
 }
 var UserSchema = new mongoose.Schema(user, {strict: false, autoIndex: true});
 //UserSchema.set('toJSON', { virtuals: true });
@@ -101,7 +103,22 @@ UserSchema.statics.removeById = function(userId, cb) {
     if (err) return cb(err);
     if (validator.isNull(user)) return cb(null, null);
     return cb(null, user);    
-  })
+  });
+}
+
+// Set a users photo to default
+UserSchema.statics.setDefaultPhotoById = function(userId, cb) {
+  this.findOne({userId: userId}, function(err, user) {
+    if (err) return cb(err);
+    if (validator.isNull(user)) return cb(null, null);
+    user.set('photo', defaultPhoto);
+    user.save(function (err) {
+      if (err) {
+        return cb(err);
+      }
+      return cb(null, user.toObject());
+    });
+  }); 
 }
 
 // specify the transform schema option

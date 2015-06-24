@@ -29,5 +29,5 @@ module.exports = function(app) {
 	app.delete(baseurl + '/users/:user_id', authController.verifyAccessToken, userController.deleteUser);
 	app.get(baseurl + '/users/:user_id/verify', userController.verifyEmail);
 	app.put(baseurl + '/users/:user_id/password', authController.verifyAccessToken, userController.putUserPassword);
-	
+	app.post(baseurl + '/users/:user_id/photo', authController.verifyAccessToken, userController.postUserPhoto);
 }
