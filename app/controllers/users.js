@@ -200,3 +200,4 @@ module.exports.deleteUser = function deleteUser(req, res) {
     return res.sendStatus(204);
   });
 }
+

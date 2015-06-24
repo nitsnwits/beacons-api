@@ -4,7 +4,8 @@ module.exports = {
 		name: 'Salesman',
 		baseurl: '/api/v1',
 		domain: 'http://salesman-betasjsu.rhcloud.com',
-		passwordLength: 8
+		passwordLength: 8,
+		defaultPhoto: '/default-user-avatar.png'
 	},
 	database: {
 		name: 'mongodb',
@@ -36,5 +37,13 @@ module.exports = {
 		email: 'salesman.betasjsu@gmail.com',
 		password: 'Salesman',
 		service: 'gmail'		
+	},
+	aws: {
+		region: 'us-west-1',
+		s3: {
+			bucketName: 'Salesman-Photos',
+			acl: 'public-read',
+			baseUrl: 'http://s3.amazonaws.com'
+		}
 	}
 }

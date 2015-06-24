@@ -26,6 +26,7 @@ require('./config/init/utils')(app);
 require('./config/init/errors')(app);
 require('./config/init/routes')(app);
 require('./config/init/db')(app);
+require('./config/init/aws')(app);
 
 // application server start
 server = http.createServer(app);
