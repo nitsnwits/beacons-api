@@ -28,6 +28,7 @@ module.exports.searchProducts = function(req, res) {
   });
 }
 
+// @POST /products
 module.exports.postProducts = function(req, res) {
   if (_.isEmpty(req.body)) {
     log.info('Empty or invalid request body');
