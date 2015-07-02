@@ -726,3 +726,162 @@ schemas:
           body:
             application/json:
               schema: ServiceUnavailable                
+/products:
+  post:
+    description: Create a new product (categoryId is required field)
+    headers:
+      Authorization:
+        description: Use access token as value to Authorization header
+        type: string
+    body:
+      application/json:
+        example: |
+          {
+            "name": "iphone",
+            "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "updated": 1435830180137,
+                "created": 1435830180137,
+                "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+                "name": "iphone",
+                "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+              }      
+      400:
+        body:
+          application/json:
+            schema: BadRequest
+      401:
+        body:
+          application/json:
+            schema: Unauthorized
+      404:
+        body:
+          application/json:
+            schema: NotFound
+      500:
+        body:
+          application/json:
+            schema: InternalServerError
+      503:
+        body:
+          application/json:
+            schema: ServiceUnavailable
+  /search:
+    get:
+      description: Search products based on a query
+      headers:
+        Authorization:
+          description: Use access token as value to Authorization header
+          type: string
+      queryParameters:
+        query:
+          description: Search string for the query (Do not put single quotes across query)
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                [
+                  {
+                    "updated": 1435830180137,
+                    "created": 1435830180137,
+                    "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+                    "name": "iphone",
+                    "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+                  }
+                ]  
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError
+        503:
+          body:
+            application/json:
+              schema: ServiceUnavailable        
+  /{productId}:
+    put:
+      description: Change details of a product 
+      headers:
+        Authorization:
+          description: Use access token as value to Authorization header
+          type: string
+      body:
+        application/json:
+          example: |
+            {
+              "name": "iphone",
+              "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "updated": 1435830180137,
+                  "created": 1435830180137,
+                  "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+                  "name": "iphone",
+                  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+                }      
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError 
+    delete:
+      description: Delete a product based on product id
+      headers:
+        Authorization:
+          description: Use access token as value to Authorization header
+          type: string          
+      responses:
+        204:
+          description: |
+            Successfully deleted resource(s)
+        400:
+          body:
+            application/json:
+              schema: BadRequest
+        401:
+          body:
+            application/json:
+              schema: Unauthorized
+        404:
+          body:
+            application/json:
+              schema: NotFound
+        500:
+          body:
+            application/json:
+              schema: InternalServerError             
+            

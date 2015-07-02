@@ -35,6 +35,10 @@ module.exports = function(app) {
 
 	// Product routes
 	app.get(baseurl + '/products/search', authController.verifyAccessToken, productController.searchProducts);
+	app.post(baseurl + '/products', productController.postProducts);
+	app.get(baseurl + '/products/:product_id', productController.getProduct);
+	app.put(baseurl + '/products/:product_id', productController.putProduct);
+	app.delete(baseurl + '/products/:product_id', productController.deleteProduct);
 
 	// Categories routes
 	app.get(baseurl + '/categories', authController.verifyAccessToken, categoryController.getCategories);

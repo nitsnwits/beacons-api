@@ -67,7 +67,24 @@ module.exports.putCategory = function (req, res) {
       log.info('Category not found');
       return res.status(404).send(app.locals.errors.code404);      
     }
-    category.set('name', req.body.name);
+    if (req.body.name) {
+      category.set('name', req.body.name);
+    }
+    if (req.body.xCoord) {
+      category.set('xCoord', req.body.xCoord); 
+    }
+    if (req.body.yCoord) {
+      category.set('yCoord', req.body.yCoord);
+    }
+    if (req.body.beaconName) {
+      category.set('beaconName', req.body.beaconName);
+    }
+    if (req.body.majorNumber) {
+      category.set('majorNumber', req.body.majorNumber);
+    }
+    if (req.body.minorNumber) {
+      category.set('minorNumber', req.body.minorNumber);
+    }
     category.save(function(err, category) {
       if (err) {
         log.warn('Error saving category', err);

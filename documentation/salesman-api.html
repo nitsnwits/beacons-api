@@ -714,4 +714,125 @@
   "errorCode": 503,
   "errorMessage": "Service Unavailable"
 }
-</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#auth">/auth</a></li><li><a href="#users">/users</a></li><li><a href="#categories">/categories</a></li></ul></div></div></div></div></body></html>
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="products" class="panel-title">/products</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_products"><span class="parent"></span>/products</a> <span class="methods"><a href="#products_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_products" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#products_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create a new product (categoryId is required field)</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="products_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/products</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create a new product (categoryId is required field)</p></div><ul class="nav nav-tabs"><li class="active"><a href="#products_post_request" data-toggle="tab">Request</a></li><li><a href="#products_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="products_post_request"><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "name": "iphone",
+  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+}
+</code></pre></div><div class="tab-pane" id="products_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "updated": 1435830180137,
+  "created": 1435830180137,
+  "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+  "name": "iphone",
+  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+}      
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 503,
+  "errorMessage": "Service Unavailable"
+}
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_products_search"><span class="parent">/products</span>/search</a> <span class="methods"><a href="#products_search_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_products_search" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#products_search_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Search products based on a query</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="products_search_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/products</span>/search</h4></div><div class="modal-body"><div class="alert alert-info"><p>Search products based on a query</p></div><ul class="nav nav-tabs"><li class="active"><a href="#products_search_get_request" data-toggle="tab">Request</a></li><li><a href="#products_search_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="products_search_get_request"><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul><h3>Query Parameters</h3><ul><li><strong>query</strong>: <em>(string)</em><p>Search string for the query (Do not put single quotes across query)</p></li></ul></div><div class="tab-pane" id="products_search_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>[
+  {
+    "updated": 1435830180137,
+    "created": 1435830180137,
+    "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+    "name": "iphone",
+    "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+  }
+]  
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 503,
+  "errorMessage": "Service Unavailable"
+}
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_products__productId_"><span class="parent">/products</span>/{productId}</a> <span class="methods"><a href="#products__productId__put"><span class="badge badge_put">put</span></a> <a href="#products__productId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_products__productId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#products__productId__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Change details of a product</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#products__productId__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete a product based on product id</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="products__productId__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/products</span>/{productId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Change details of a product</p></div><ul class="nav nav-tabs"><li class="active"><a href="#products__productId__put_request" data-toggle="tab">Request</a></li><li><a href="#products__productId__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="products__productId__put_request"><h3>URI Parameters</h3><ul><li><strong>productId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "name": "iphone",
+  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+}
+</code></pre></div><div class="tab-pane" id="products__productId__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "updated": 1435830180137,
+  "created": 1435830180137,
+  "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+  "name": "iphone",
+  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+}      
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="products__productId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/products</span>/{productId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete a product based on product id</p></div><ul class="nav nav-tabs"><li class="active"><a href="#products__productId__delete_request" data-toggle="tab">Request</a></li><li><a href="#products__productId__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="products__productId__delete_request"><h3>URI Parameters</h3><ul><li><strong>productId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul></div><div class="tab-pane" id="products__productId__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>Successfully deleted resource(s)</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#auth">/auth</a></li><li><a href="#users">/users</a></li><li><a href="#categories">/categories</a></li><li><a href="#products">/products</a></li></ul></div></div></div></div></body></html>
