@@ -4,6 +4,8 @@
 
 var userController = require('../../app/controllers/users');
 var authController = require('../../app/controllers/auth');
+var productController = require('../../app/controllers/products');
+var categoryController = require('../../app/controllers/categories');
 
 module.exports = function(app) {
 	var baseurl = app.locals.config.app.baseurl;
@@ -30,4 +32,18 @@ module.exports = function(app) {
 	app.get(baseurl + '/users/:user_id/verify', userController.verifyEmail);
 	app.put(baseurl + '/users/:user_id/password', authController.verifyAccessToken, userController.putUserPassword);
 	app.post(baseurl + '/users/:user_id/photo', authController.verifyAccessToken, userController.postUserPhoto);
+
+	// Product routes
+	app.get(baseurl + '/products/search', authController.verifyAccessToken, productController.searchProducts);
+	app.post(baseurl + '/products', productController.postProducts);
+	app.get(baseurl + '/products/:product_id', productController.getProduct);
+	app.put(baseurl + '/products/:product_id', productController.putProduct);
+	app.delete(baseurl + '/products/:product_id', productController.deleteProduct);
+
+	// Categories routes
+	app.get(baseurl + '/categories', authController.verifyAccessToken, categoryController.getCategories);
+	app.post(baseurl + '/categories', categoryController.postCategories);
+	app.get(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.getCategory);
+	app.put(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.putCategory);
+	app.delete(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.deleteCategory);
 }

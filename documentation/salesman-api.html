@@ -540,160 +540,12 @@
   "errorCode": 503,
   "errorMessage": "Service Unavailable"
 }
-</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="section" class="panel-title">/section</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_section"><span class="parent"></span>/section</a> <span class="methods"><a href="#section_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_section" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#section_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create a section</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="section_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/section</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create a section</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section_post_request" data-toggle="tab">Request</a></li><li><a href="#section_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'sectionName': 'Aisle 4'
-}
-</code></pre></div><div class="tab-pane" id="section_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'sectionName': 'Aisle 4',
-  'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_section__sectionId_"><span class="parent">/section</span>/{sectionId}</a> <span class="methods"><a href="#section__sectionId__get"><span class="badge badge_get">get</span></a> <a href="#section__sectionId__put"><span class="badge badge_put">put</span></a> <a href="#section__sectionId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_section__sectionId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#section__sectionId__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get details of a section</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#section__sectionId__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Change details of a section</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#section__sectionId__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete a section</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="section__sectionId__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/section</span>/{sectionId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get details of a section</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section__sectionId__get_request" data-toggle="tab">Request</a></li><li><a href="#section__sectionId__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section__sectionId__get_request"><h3>URI Parameters</h3><ul><li><strong>sectionId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="section__sectionId__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'sectionName': 'Aisle 4',
-  'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="section__sectionId__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/section</span>/{sectionId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Change details of a section</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section__sectionId__put_request" data-toggle="tab">Request</a></li><li><a href="#section__sectionId__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section__sectionId__put_request"><h3>URI Parameters</h3><ul><li><strong>sectionId</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'sectionName': 'Aisle 7'
-}
-</code></pre></div><div class="tab-pane" id="section__sectionId__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'sectionName': 'Aisle 7',
-  'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="section__sectionId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/section</span>/{sectionId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete a section</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section__sectionId__delete_request" data-toggle="tab">Request</a></li><li><a href="#section__sectionId__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section__sectionId__delete_request"><h3>URI Parameters</h3><ul><li><strong>sectionId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="section__sectionId__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>Successfully deleted resource(s)</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_section__sectionId__categories"><span class="parent">/section/{sectionId}</span>/categories</a> <span class="methods"><a href="#section__sectionId__categories_post"><span class="badge badge_post">post</span></a> <a href="#section__sectionId__categories_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_section__sectionId__categories" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#section__sectionId__categories_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create a category in a section</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#section__sectionId__categories_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get all categories in a section</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="section__sectionId__categories_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/section/{sectionId}</span>/categories</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create a category in a section</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section__sectionId__categories_post_request" data-toggle="tab">Request</a></li><li><a href="#section__sectionId__categories_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section__sectionId__categories_post_request"><h3>URI Parameters</h3><ul><li><strong>sectionId</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'categoryName': 'Mens shoes'
-}
-</code></pre></div><div class="tab-pane" id="section__sectionId__categories_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'categoryName': 'Mens shoes',
-  'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="section__sectionId__categories_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/section/{sectionId}</span>/categories</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get all categories in a section</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section__sectionId__categories_get_request" data-toggle="tab">Request</a></li><li><a href="#section__sectionId__categories_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section__sectionId__categories_get_request"><h3>URI Parameters</h3><ul><li><strong>sectionId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="section__sectionId__categories_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>[
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="categories" class="panel-title">/categories</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_categories"><span class="parent"></span>/categories</a> <span class="methods"><a href="#categories_get"><span class="badge badge_get">get</span></a> <a href="#categories_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_categories" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#categories_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get all categories</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#categories_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create a new category</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="categories_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/categories</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get all categories</p></div><ul class="nav nav-tabs"><li class="active"><a href="#categories_get_request" data-toggle="tab">Request</a></li><li><a href="#categories_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="categories_get_request"><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul></div><div class="tab-pane" id="categories_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>[
   {
-    'categoryName': 'Mens shoes',
-    'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+    "updated": 1435822963187,
+    "created": 1435822963187,
+    "categoryId": "8cb577e8-bafd-4ea1-b38d-76cd351f61dc",
+    "name": "Autocare"
   }
 ]
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
@@ -721,9 +573,20 @@
   "errorCode": 503,
   "errorMessage": "Service Unavailable"
 }
-</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_section__sectionId__categories__categoryId_"><span class="parent">/section/{sectionId}/categories</span>/{categoryId}</a> <span class="methods"><a href="#section__sectionId__categories__categoryId__get"><span class="badge badge_get">get</span></a> <a href="#section__sectionId__categories__categoryId__put"><span class="badge badge_put">put</span></a> <a href="#section__sectionId__categories__categoryId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_section__sectionId__categories__categoryId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#section__sectionId__categories__categoryId__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get one category</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#section__sectionId__categories__categoryId__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Change a category</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#section__sectionId__categories__categoryId__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete a category from a section</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="section__sectionId__categories__categoryId__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/section/{sectionId}/categories</span>/{categoryId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get one category</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section__sectionId__categories__categoryId__get_request" data-toggle="tab">Request</a></li><li><a href="#section__sectionId__categories__categoryId__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section__sectionId__categories__categoryId__get_request"><h3>URI Parameters</h3><ul><li><strong>sectionId</strong>: <em>required (string)</em></li><li><strong>categoryId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="section__sectionId__categories__categoryId__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'categoryName': 'Mens shoes',
-  'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="categories_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/categories</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create a new category</p></div><ul class="nav nav-tabs"><li class="active"><a href="#categories_post_request" data-toggle="tab">Request</a></li><li><a href="#categories_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="categories_post_request"><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "name": "New Category",
+  "beaconName": "something",
+  "xCoord": 12.34,
+  "yCoord": 12.21
+}
+</code></pre></div><div class="tab-pane" id="categories_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "updated": 1435822963187,
+  "created": 1435822963187,
+  "categoryId": "8cb577e8-bafd-4ea1-b38d-76cd351f61dc",
+  "name": "New Category",
+  "beaconName": "something",
+  "xCoord": 12.34,
+  "yCoord": 12.21
 }
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
@@ -750,72 +613,14 @@
   "errorCode": 503,
   "errorMessage": "Service Unavailable"
 }
-</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="section__sectionId__categories__categoryId__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/section/{sectionId}/categories</span>/{categoryId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Change a category</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section__sectionId__categories__categoryId__put_request" data-toggle="tab">Request</a></li><li><a href="#section__sectionId__categories__categoryId__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section__sectionId__categories__categoryId__put_request"><h3>URI Parameters</h3><ul><li><strong>sectionId</strong>: <em>required (string)</em></li><li><strong>categoryId</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'categoryName': 'Changed'
-}
-</code></pre></div><div class="tab-pane" id="section__sectionId__categories__categoryId__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'categoryName': 'Changed',
-  'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="section__sectionId__categories__categoryId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/section/{sectionId}/categories</span>/{categoryId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete a category from a section</p></div><ul class="nav nav-tabs"><li class="active"><a href="#section__sectionId__categories__categoryId__delete_request" data-toggle="tab">Request</a></li><li><a href="#section__sectionId__categories__categoryId__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="section__sectionId__categories__categoryId__delete_request"><h3>URI Parameters</h3><ul><li><strong>sectionId</strong>: <em>required (string)</em></li><li><strong>categoryId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="section__sectionId__categories__categoryId__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>Successfully deleted resource(s)</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="beacons" class="panel-title">/beacons</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_beacons"><span class="parent"></span>/beacons</a> <span class="methods"><a href="#beacons_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_beacons" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#beacons_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create a new beacon in the system admin functionality</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="beacons_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/beacons</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create a new beacon in the system admin functionality</p></div><ul class="nav nav-tabs"><li class="active"><a href="#beacons_post_request" data-toggle="tab">Request</a></li><li><a href="#beacons_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="beacons_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-  'beaconName': 'Mens Shoes',
-  'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-}
-</code></pre></div><div class="tab-pane" id="beacons_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-  'beaconName': 'Mens Shoes',
-  'dateInstalled': 1434146201
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_categories__categoryId_"><span class="parent">/categories</span>/{categoryId}</a> <span class="methods"><a href="#categories__categoryId__get"><span class="badge badge_get">get</span></a> <a href="#categories__categoryId__put"><span class="badge badge_put">put</span></a> <a href="#categories__categoryId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_categories__categoryId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#categories__categoryId__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get one category by category id</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#categories__categoryId__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Create a new category</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#categories__categoryId__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete one category by category id</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="categories__categoryId__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/categories</span>/{categoryId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get one category by category id</p></div><ul class="nav nav-tabs"><li class="active"><a href="#categories__categoryId__get_request" data-toggle="tab">Request</a></li><li><a href="#categories__categoryId__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="categories__categoryId__get_request"><h3>URI Parameters</h3><ul><li><strong>categoryId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul></div><div class="tab-pane" id="categories__categoryId__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "updated": 1435822963187,
+  "created": 1435822963187,
+  "categoryId": "8cb577e8-bafd-4ea1-b38d-76cd351f61dc",
+  "name": "New Category",
+  "beaconName": "something",
+  "xCoord": 12.34,
+  "yCoord": 12.21
 }
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
@@ -842,105 +647,21 @@
   "errorCode": 503,
   "errorMessage": "Service Unavailable"
 }
-</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_beacons__beaconId_"><span class="parent">/beacons</span>/{beaconId}</a> <span class="methods"><a href="#beacons__beaconId__get"><span class="badge badge_get">get</span></a> <a href="#beacons__beaconId__delete"><span class="badge badge_delete">delete</span></a> <a href="#beacons__beaconId__put"><span class="badge badge_put">put</span></a></span></h4></div><div id="panel_beacons__beaconId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#beacons__beaconId__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get details of a beacon</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#beacons__beaconId__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete a beacon from the system</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#beacons__beaconId__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Change details of a beacon</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="beacons__beaconId__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/beacons</span>/{beaconId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get details of a beacon</p></div><ul class="nav nav-tabs"><li class="active"><a href="#beacons__beaconId__get_request" data-toggle="tab">Request</a></li><li><a href="#beacons__beaconId__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="beacons__beaconId__get_request"><h3>URI Parameters</h3><ul><li><strong>beaconId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="beacons__beaconId__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-  'beaconName': 'Mens Shoes',
-  'dateInstalled': 1434146201
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="categories__categoryId__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/categories</span>/{categoryId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create a new category</p></div><ul class="nav nav-tabs"><li class="active"><a href="#categories__categoryId__put_request" data-toggle="tab">Request</a></li><li><a href="#categories__categoryId__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="categories__categoryId__put_request"><h3>URI Parameters</h3><ul><li><strong>categoryId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "name": "New Category",
+  "beaconName": "something",
+  "xCoord": 12.34,
+  "yCoord": 12.21
 }
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="beacons__beaconId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/beacons</span>/{beaconId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete a beacon from the system</p></div><ul class="nav nav-tabs"><li class="active"><a href="#beacons__beaconId__delete_request" data-toggle="tab">Request</a></li><li><a href="#beacons__beaconId__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="beacons__beaconId__delete_request"><h3>URI Parameters</h3><ul><li><strong>beaconId</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="beacons__beaconId__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>Successfully deleted resource(s)</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="beacons__beaconId__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/beacons</span>/{beaconId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Change details of a beacon</p></div><ul class="nav nav-tabs"><li class="active"><a href="#beacons__beaconId__put_request" data-toggle="tab">Request</a></li><li><a href="#beacons__beaconId__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="beacons__beaconId__put_request"><h3>URI Parameters</h3><ul><li><strong>beaconId</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'beaconName': 'Womens shoes'
-} 
-</code></pre></div><div class="tab-pane" id="beacons__beaconId__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
-  'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-  'beaconName': 'Mens Shoes',
-  'dateInstalled': 1434146201
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 400,
-  "errorMessage": "Bad Request"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 401,
-  "errorMessage": "Unauthorized"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 404,
-  "errorMessage": "Not Found"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 500,
-  "errorMessage": "Internal Server Error"
-}
-</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
-  "status": "error",
-  "errorCode": 503,
-  "errorMessage": "Service Unavailable"
-}
-</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_beacons__beaconId__offers"><span class="parent">/beacons/{beaconId}</span>/offers</a> <span class="methods"><a href="#beacons__beaconId__offers_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_beacons__beaconId__offers" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#beacons__beaconId__offers_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get offers by a beacon id</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="beacons__beaconId__offers_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/beacons/{beaconId}</span>/offers</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get offers by a beacon id</p></div><ul class="nav nav-tabs"><li class="active"><a href="#beacons__beaconId__offers_get_request" data-toggle="tab">Request</a></li><li><a href="#beacons__beaconId__offers_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="beacons__beaconId__offers_get_request"><h3>URI Parameters</h3><ul><li><strong>beaconId</strong>: <em>required (string)</em></li></ul><h3>Query Parameters</h3><ul><li><strong>maxCount</strong>: <em>(string)</em></li></ul></div><div class="tab-pane" id="beacons__beaconId__offers_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>[
+</code></pre></div><div class="tab-pane" id="categories__categoryId__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>[
   {
-    'productId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-    'productName': 'Mens Shoes',
-    'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-    'brand': 'Puma',
-    'weight': '1/2 pounds',
-    'size': '9',
-    'listedPrice': 199,
-    'standardPrice': 399,
-    'color': 'blue'
+    "updated": 1435822963187,
+    "created": 1435822963187,
+    "categoryId": "8cb577e8-bafd-4ea1-b38d-76cd351f61dc",
+    "name": "New Category",
+    "beaconName": "something",
+    "xCoord": 12.34,
+    "yCoord": 12.21
   }
 ]
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
@@ -968,19 +689,42 @@
   "errorCode": 503,
   "errorMessage": "Service Unavailable"
 }
-</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="recommendations" class="panel-title">/recommendations</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_recommendations"><span class="parent"></span>/recommendations</a> <span class="methods"><a href="#recommendations_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_recommendations" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#recommendations_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get offers based on recommendations based on shopping history</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="recommendations_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/recommendations</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get offers based on recommendations based on shopping history</p></div><ul class="nav nav-tabs"><li class="active"><a href="#recommendations_get_request" data-toggle="tab">Request</a></li><li><a href="#recommendations_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="recommendations_get_request"><h3>Query Parameters</h3><ul><li><strong>maxCount</strong>: <em>(string)</em></li></ul></div><div class="tab-pane" id="recommendations_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>[
-  {
-    'productId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-    'productName': 'Mens Shoes',
-    'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-    'brand': 'Puma',
-    'weight': '1/2 pounds',
-    'size': '9',
-    'listedPrice': 199,
-    'standardPrice': 399,
-    'color': 'blue'
-  }
-]
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="categories__categoryId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/categories</span>/{categoryId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete one category by category id</p></div><ul class="nav nav-tabs"><li class="active"><a href="#categories__categoryId__delete_request" data-toggle="tab">Request</a></li><li><a href="#categories__categoryId__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="categories__categoryId__delete_request"><h3>URI Parameters</h3><ul><li><strong>categoryId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul></div><div class="tab-pane" id="categories__categoryId__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>Successfully deleted resource(s)</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 503,
+  "errorMessage": "Service Unavailable"
+}
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="products" class="panel-title">/products</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_products"><span class="parent"></span>/products</a> <span class="methods"><a href="#products_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_products" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#products_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create a new product (categoryId is required field)</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="products_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/products</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create a new product (categoryId is required field)</p></div><ul class="nav nav-tabs"><li class="active"><a href="#products_post_request" data-toggle="tab">Request</a></li><li><a href="#products_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="products_post_request"><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "name": "iphone",
+  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+}
+</code></pre></div><div class="tab-pane" id="products_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "updated": 1435830180137,
+  "created": 1435830180137,
+  "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+  "name": "iphone",
+  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+}      
 </code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
   "status": "error",
   "errorCode": 400,
@@ -1006,4 +750,89 @@
   "errorCode": 503,
   "errorMessage": "Service Unavailable"
 }
-</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#auth">/auth</a></li><li><a href="#users">/users</a></li><li><a href="#section">/section</a></li><li><a href="#beacons">/beacons</a></li><li><a href="#recommendations">/recommendations</a></li></ul></div></div></div></div></body></html>
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_products_search"><span class="parent">/products</span>/search</a> <span class="methods"><a href="#products_search_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_products_search" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#products_search_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Search products based on a query</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="products_search_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/products</span>/search</h4></div><div class="modal-body"><div class="alert alert-info"><p>Search products based on a query</p></div><ul class="nav nav-tabs"><li class="active"><a href="#products_search_get_request" data-toggle="tab">Request</a></li><li><a href="#products_search_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="products_search_get_request"><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul><h3>Query Parameters</h3><ul><li><strong>query</strong>: <em>(string)</em><p>Search string for the query (Do not put single quotes across query)</p></li></ul></div><div class="tab-pane" id="products_search_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>[
+  {
+    "updated": 1435830180137,
+    "created": 1435830180137,
+    "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+    "name": "iphone",
+    "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+  }
+]  
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 503,
+  "errorMessage": "Service Unavailable"
+}
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_products__productId_"><span class="parent">/products</span>/{productId}</a> <span class="methods"><a href="#products__productId__put"><span class="badge badge_put">put</span></a> <a href="#products__productId__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_products__productId_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#products__productId__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Change details of a product</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#products__productId__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete a product based on product id</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="products__productId__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/products</span>/{productId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Change details of a product</p></div><ul class="nav nav-tabs"><li class="active"><a href="#products__productId__put_request" data-toggle="tab">Request</a></li><li><a href="#products__productId__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="products__productId__put_request"><h3>URI Parameters</h3><ul><li><strong>productId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "name": "iphone",
+  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+}
+</code></pre></div><div class="tab-pane" id="products__productId__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "updated": 1435830180137,
+  "created": 1435830180137,
+  "productId": "5bcf1a79-0da5-4ead-9a00-1099a1746fc0",
+  "name": "iphone",
+  "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16"
+}      
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="products__productId__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/products</span>/{productId}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete a product based on product id</p></div><ul class="nav nav-tabs"><li class="active"><a href="#products__productId__delete_request" data-toggle="tab">Request</a></li><li><a href="#products__productId__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="products__productId__delete_request"><h3>URI Parameters</h3><ul><li><strong>productId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>(string)</em><p>Use access token as value to Authorization header</p></li></ul></div><div class="tab-pane" id="products__productId__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>Successfully deleted resource(s)</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 400,
+  "errorMessage": "Bad Request"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 401,
+  "errorMessage": "Unauthorized"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 404,
+  "errorMessage": "Not Found"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "status": "error",
+  "errorCode": 500,
+  "errorMessage": "Internal Server Error"
+}
+</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#auth">/auth</a></li><li><a href="#users">/users</a></li><li><a href="#categories">/categories</a></li><li><a href="#products">/products</a></li></ul></div></div></div></div></body></html>
