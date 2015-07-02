@@ -21,8 +21,8 @@ function saveCategory(category, cb) {
 }
 
 module.exports = function(app) {
-  if (!app.locals.config.app.updateCategories || process.env.NODE_ENV === 'production') {
-    log.info('Not updating categories in production mode or when overridden by config');
+  if (!app.locals.config.app.updateCategories) {
+    log.info('Not updating categories when overridden by config');
     return;
   }
   // empty the categories collection
