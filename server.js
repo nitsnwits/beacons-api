@@ -22,11 +22,13 @@ app.engine('html', require('hogan-express'));
 
 // initialization
 require('./config/init/aws')(app);
+require('./config/init/semantics')(app);
 require('./config/init/cache')(app);
 require('./config/init/utils')(app);
 require('./config/init/errors')(app);
 require('./config/init/routes')(app);
 require('./config/init/db')(app);
+require('./config/init/categories')(app);
 
 // application server start
 server = http.createServer(app);

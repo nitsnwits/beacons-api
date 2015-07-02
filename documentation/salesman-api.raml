@@ -515,15 +515,60 @@ schemas:
             body:
               application/json:
                 schema: ServiceUnavailable
-
-/section:
+/categories:
+  get:
+    description: Get all categories
+    headers:
+      Authorization:
+        description: Use access token as value to Authorization header
+        type: string
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "updated": 1435822963187,
+                  "created": 1435822963187,
+                  "categoryId": "8cb577e8-bafd-4ea1-b38d-76cd351f61dc",
+                  "name": "Autocare"
+                }
+              ]
+      400:
+        body:
+          application/json:
+            schema: BadRequest
+      401:
+        body:
+          application/json:
+            schema: Unauthorized
+      404:
+        body:
+          application/json:
+            schema: NotFound
+      500:
+        body:
+          application/json:
+            schema: InternalServerError
+      503:
+        body:
+          application/json:
+            schema: ServiceUnavailable
   post:
-    description: Create a section
+    description: Create a new category
+    headers:
+      Authorization:
+        description: Use access token as value to Authorization header
+        type: string
     body:
       application/json:
         example: |
           {
-            'sectionName': 'Aisle 4'
+            "name": "New Category",
+            "beaconName": "something",
+            "xCoord": 12.34,
+            "yCoord": 12.21
           }
     responses:
       200:
@@ -531,8 +576,13 @@ schemas:
           application/json:
             example: |
               {
-                'sectionName': 'Aisle 4',
-                'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                "updated": 1435822963187,
+                "created": 1435822963187,
+                "categoryId": "8cb577e8-bafd-4ea1-b38d-76cd351f61dc",
+                "name": "New Category",
+                "beaconName": "something",
+                "xCoord": 12.34,
+                "yCoord": 12.21
               }
       400:
         body:
@@ -554,17 +604,26 @@ schemas:
         body:
           application/json:
             schema: ServiceUnavailable
-  /{sectionId}:
+  /{categoryId}:
     get:
-      description: Get details of a section
+      description: Get one category by category id
+      headers:
+        Authorization:
+          description: Use access token as value to Authorization header
+          type: string
       responses:
         200:
           body:
             application/json:
               example: |
                 {
-                  'sectionName': 'Aisle 4',
-                  'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                  "updated": 1435822963187,
+                  "created": 1435822963187,
+                  "categoryId": "8cb577e8-bafd-4ea1-b38d-76cd351f61dc",
+                  "name": "New Category",
+                  "beaconName": "something",
+                  "xCoord": 12.34,
+                  "yCoord": 12.21
                 }
         400:
           body:
@@ -585,290 +644,38 @@ schemas:
         503:
           body:
             application/json:
-              schema: ServiceUnavailable      
+              schema: ServiceUnavailable
     put:
-      description: Change details of a section
+      description: Create a new category
+      headers:
+        Authorization:
+          description: Use access token as value to Authorization header
+          type: string
       body:
         application/json:
           example: |
             {
-              'sectionName': 'Aisle 7'
+              "name": "New Category",
+              "beaconName": "something",
+              "xCoord": 12.34,
+              "yCoord": 12.21
             }
       responses:
         200:
           body:
             application/json:
               example: |
-                {
-                  'sectionName': 'Aisle 7',
-                  'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-                }
-        400:
-          body:
-            application/json:
-              schema: BadRequest
-        401:
-          body:
-            application/json:
-              schema: Unauthorized
-        404:
-          body:
-            application/json:
-              schema: NotFound
-        500:
-          body:
-            application/json:
-              schema: InternalServerError
-        503:
-          body:
-            application/json:
-              schema: ServiceUnavailable     
-    delete:
-      description: Delete a section
-      responses:
-        204:
-         description: |
-           Successfully deleted resource(s)
-        400:
-          body:
-            application/json:
-              schema: BadRequest
-        401:
-          body:
-            application/json:
-              schema: Unauthorized
-        404:
-          body:
-            application/json:
-              schema: NotFound
-        500:
-          body:
-            application/json:
-              schema: InternalServerError
-        503:
-          body:
-            application/json:
-              schema: ServiceUnavailable
-    /categories:
-      post:
-        description: Create a category in a section
-        body:
-          application/json:
-            example: |
-              {
-                'categoryName': 'Mens shoes'
-              }
-        responses:
-          200:
-            body:
-              application/json:
-                example: |
+                [
                   {
-                    'categoryName': 'Mens shoes',
-                    'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
+                    "updated": 1435822963187,
+                    "created": 1435822963187,
+                    "categoryId": "8cb577e8-bafd-4ea1-b38d-76cd351f61dc",
+                    "name": "New Category",
+                    "beaconName": "something",
+                    "xCoord": 12.34,
+                    "yCoord": 12.21
                   }
-          400:
-            body:
-              application/json:
-                schema: BadRequest
-          401:
-            body:
-              application/json:
-                schema: Unauthorized
-          404:
-            body:
-              application/json:
-                schema: NotFound
-          500:
-            body:
-              application/json:
-                schema: InternalServerError
-          503:
-            body:
-              application/json:
-                schema: ServiceUnavailable
-      get:
-        description: Get all categories in a section
-        responses:
-          200:
-            body:
-              application/json:
-                example: |
-                  [
-                    {
-                      'categoryName': 'Mens shoes',
-                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-                    }
-                  ]
-          400:
-            body:
-              application/json:
-                schema: BadRequest
-          401:
-            body:
-              application/json:
-                schema: Unauthorized
-          404:
-            body:
-              application/json:
-                schema: NotFound
-          500:
-            body:
-              application/json:
-                schema: InternalServerError
-          503:
-            body:
-              application/json:
-                schema: ServiceUnavailable
-      /{categoryId}:
-        get:
-          description: Get one category
-          responses:
-            200:
-              body:
-                application/json:
-                  example: |
-                    {
-                      'categoryName': 'Mens shoes',
-                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-                    }
-            400:
-              body:
-                application/json:
-                  schema: BadRequest
-            401:
-              body:
-                application/json:
-                  schema: Unauthorized
-            404:
-              body:
-                application/json:
-                  schema: NotFound
-            500:
-              body:
-                application/json:
-                  schema: InternalServerError
-            503:
-              body:
-                application/json:
-                  schema: ServiceUnavailable
-        put:
-          description: Change a category
-          body:
-            application/json:
-              example: |
-                {
-                  'categoryName': 'Changed'
-                }
-          responses:
-            200:
-              body:
-                application/json:
-                  example: |
-                    {
-                      'categoryName': 'Changed',
-                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-                    }
-            400:
-              body:
-                application/json:
-                  schema: BadRequest
-            401:
-              body:
-                application/json:
-                  schema: Unauthorized
-            404:
-              body:
-                application/json:
-                  schema: NotFound
-            500:
-              body:
-                application/json:
-                  schema: InternalServerError
-            503:
-              body:
-                application/json:
-                  schema: ServiceUnavailable
-        delete:
-          description: Delete a category from a section
-          responses:
-            204:
-              description: |
-                Successfully deleted resource(s)
-            400:
-              body:
-                application/json:
-                  schema: BadRequest
-            401:
-              body:
-                application/json:
-                  schema: Unauthorized
-            404:
-              body:
-                application/json:
-                  schema: NotFound
-            500:
-              body:
-                application/json:
-                  schema: InternalServerError
-            503:
-              body:
-                application/json:
-                  schema: ServiceUnavailable                  
-/beacons:
-  post:
-    description: Create a new beacon in the system admin functionality
-    body:
-      application/json:
-        example: |
-          {
-            'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-            'beaconName': 'Mens Shoes',
-            'sectionId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607'
-          }
-    responses:
-      200:
-        body:
-          application/json:
-            example: |
-              {
-                'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-                'beaconName': 'Mens Shoes',
-                'dateInstalled': 1434146201
-              }
-      400:
-        body:
-          application/json:
-            schema: BadRequest
-      401:
-        body:
-          application/json:
-            schema: Unauthorized
-      404:
-        body:
-          application/json:
-            schema: NotFound
-      500:
-        body:
-          application/json:
-            schema: InternalServerError
-      503:
-        body:
-          application/json:
-            schema: ServiceUnavailable
-  /{beaconId}:
-    get:
-      description: Get details of a beacon
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                {
-                  'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-                  'beaconName': 'Mens Shoes',
-                  'dateInstalled': 1434146201
-                }
+                ]
         400:
           body:
             application/json:
@@ -888,9 +695,13 @@ schemas:
         503:
           body:
             application/json:
-              schema: ServiceUnavailable
+              schema: ServiceUnavailable                
     delete:
-      description: Delete a beacon from the system
+      description: Delete one category by category id
+      headers:
+        Authorization:
+          description: Use access token as value to Authorization header
+          type: string
       responses:
         204:
           description: |
@@ -914,128 +725,4 @@ schemas:
         503:
           body:
             application/json:
-              schema: ServiceUnavailable         
-    put:
-      description: Change details of a beacon
-      body:
-        application/json:
-          example: |
-            {
-              'beaconName': 'Womens shoes'
-            } 
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                {
-                  'beaconId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-                  'beaconName': 'Mens Shoes',
-                  'dateInstalled': 1434146201
-                }
-        400:
-          body:
-            application/json:
-              schema: BadRequest
-        401:
-          body:
-            application/json:
-              schema: Unauthorized
-        404:
-          body:
-            application/json:
-              schema: NotFound
-        500:
-          body:
-            application/json:
-              schema: InternalServerError
-        503:
-          body:
-            application/json:
-              schema: ServiceUnavailable
-    /offers:
-      get:
-        description: Get offers by a beacon id 
-        queryParameters:
-          maxCount: 
-        responses:
-          200:
-            body:
-              application/json:
-                example: |
-                  [
-                    {
-                      'productId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-                      'productName': 'Mens Shoes',
-                      'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-                      'brand': 'Puma',
-                      'weight': '1/2 pounds',
-                      'size': '9',
-                      'listedPrice': 199,
-                      'standardPrice': 399,
-                      'color': 'blue'
-                    }
-                  ]
-          400:
-            body:
-              application/json:
-                schema: BadRequest
-          401:
-            body:
-              application/json:
-                schema: Unauthorized
-          404:
-            body:
-              application/json:
-                schema: NotFound
-          500:
-            body:
-              application/json:
-                schema: InternalServerError
-          503:
-            body:
-              application/json:
-                schema: ServiceUnavailable
-/recommendations:
-  get:
-    description: Get offers based on recommendations based on shopping history
-    queryParameters:
-      maxCount: 
-    responses:
-      200:
-        body:
-          application/json:
-            example: |
-              [
-                {
-                  'productId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-                  'productName': 'Mens Shoes',
-                  'categoryId': '8ad5e23c-828f-40f5-8a60-7fdc36e02607',
-                  'brand': 'Puma',
-                  'weight': '1/2 pounds',
-                  'size': '9',
-                  'listedPrice': 199,
-                  'standardPrice': 399,
-                  'color': 'blue'
-                }
-              ]
-      400:
-        body:
-          application/json:
-            schema: BadRequest
-      401:
-        body:
-          application/json:
-            schema: Unauthorized
-      404:
-        body:
-          application/json:
-            schema: NotFound
-      500:
-        body:
-          application/json:
-            schema: InternalServerError
-      503:
-        body:
-          application/json:
-            schema: ServiceUnavailable 
+              schema: ServiceUnavailable                

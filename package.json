@@ -1,47 +1,47 @@
 {
-	"name": "salesman",
-	"description": "Powering In-Store Shopping experience",
-	"version": "0.0.1",
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js | ./node_modules/bunyan/bin/bunyan -o short",
-		"test": "./bin/test.js"
-	},	
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/nitsnwits/new-node.git"
-	},
-	"keywords": [
-		"node",
-		"node.js",
-		"javascript"
-	],
-	"author": "Neeraj Sharma",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/nitsnwits/beacons-api.git/issues"
-	},
-	"homepage": "https://github.com/nitsnwits/beacons-api.git",
-	"dependencies": {
-		"express": "4.x.x",
-		"underscore": "1.x.x",
-		"forever": "0.x.x",
-		"request": "2.27.0",
-		"mongoose": "4.x.x",
-		"validator": "3.16.1",
-		"node-uuid": "1.4.1",
-		"bunyan": "1.x.x",
-		"bcrypt": "0.x.x",
-		"async": "1.x.x",
-		"raml2html": "2.x.x",
-		"redis": "0.x.x",
-		"nodemailer": "1.x.x",
-		"randomstring": "1.x.x",
-		"aws-sdk": "~2.x.x",
-		"html": "0.0.9",
-		"ejs": "~2.3.1",
-		"body-parser": "~1.0.1",
-		"hogan-express": "*",
-		"config": "~1.12.0"
-  	}
+  "name": "salesman",
+  "description": "Powering In-Store Shopping experience",
+  "version": "0.0.1",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js | ./node_modules/bunyan/bin/bunyan -o short",
+    "test": "./bin/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nitsnwits/new-node.git"
+  },
+  "keywords": [
+    "node",
+    "node.js",
+    "javascript"
+  ],
+  "author": "Neeraj Sharma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nitsnwits/beacons-api.git/issues"
+  },
+  "homepage": "https://github.com/nitsnwits/beacons-api.git",
+  "dependencies": {
+    "async": "1.x.x",
+    "aws-sdk": "2.x.x",
+    "bcrypt": "0.x.x",
+    "body-parser": "~1.0.1",
+    "bunyan": "1.x.x",
+    "config": "~1.12.0",
+    "ejs": "~2.3.1",
+    "express": "4.x.x",
+    "forever": "0.x.x",
+    "hogan-express": "*",
+    "html": "0.0.9",
+    "mongoose": "4.x.x",
+    "node-uuid": "1.4.1",
+    "nodemailer": "1.x.x",
+    "raml2html": "2.x.x",
+    "randomstring": "1.x.x",
+    "redis": "0.x.x",
+    "semantics3-node": "0.0.2",
+    "underscore": "1.x.x",
+    "validator": "3.16.1"
+  }
 }

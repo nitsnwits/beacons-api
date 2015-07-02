@@ -1,0 +1,118 @@
+{
+  "categories": [
+    {
+      "updated": 1435825256635,
+      "created": 1435825256634,
+      "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16",
+      "name": "Autocare"
+    },
+    {
+      "updated": 1435825256635,
+      "created": 1435825256635,
+      "categoryId": "0885ac8b-e650-4d2f-adca-9436b9708ac5",
+      "name": "Toys"
+    },
+    {
+      "updated": 1435825256635,
+      "created": 1435825256635,
+      "categoryId": "31483bca-a14e-4758-ba89-01e8a3119bd6",
+      "name": "Home"
+    },
+    {
+      "updated": 1435825256636,
+      "created": 1435825256636,
+      "categoryId": "570cff2c-c62f-4558-a0c4-7594705c48d0",
+      "name": "Apparel"
+    },
+    {
+      "updated": 1435825256636,
+      "created": 1435825256636,
+      "categoryId": "f59e7518-40df-41af-9390-876631870d6a",
+      "name": "Jewellery"
+    },
+    {
+      "updated": 1435825256636,
+      "created": 1435825256636,
+      "categoryId": "2e672056-452c-407a-847d-e4ec8e9c0b9e",
+      "name": "Beauty"
+    },
+    {
+      "updated": 1435825256636,
+      "created": 1435825256636,
+      "categoryId": "042ba24a-c45f-4db0-80c2-32930605dd31",
+      "name": "Cards"
+    },
+    {
+      "updated": 1435825256636,
+      "created": 1435825256636,
+      "categoryId": "231e2a5e-b870-49ff-9919-397054876b28",
+      "name": "Books"
+    },
+    {
+      "updated": 1435825256636,
+      "created": 1435825256636,
+      "categoryId": "f7c82af5-d6d3-4eb3-bb38-a4d0283f57c1",
+      "name": "Health"
+    },
+    {
+      "updated": 1435825256636,
+      "created": 1435825256636,
+      "categoryId": "463398cb-42d4-4d0b-b156-65246e9ffafa",
+      "name": "Paper & Cleaning"
+    },
+    {
+      "updated": 1435825256637,
+      "created": 1435825256637,
+      "categoryId": "355fb6af-2a27-4b83-86ef-630434e97559",
+      "name": "Pets"
+    },
+    {
+      "updated": 1435825256637,
+      "created": 1435825256637,
+      "categoryId": "22533508-4384-4247-b0e1-e5c7d4e44534",
+      "name": "Crafts"
+    },
+    {
+      "updated": 1435825256637,
+      "created": 1435825256637,
+      "categoryId": "e5d34dc8-23ac-46b4-ad55-3ac6df2566da",
+      "name": "Home Office"
+    },
+    {
+      "updated": 1435825256637,
+      "created": 1435825256637,
+      "categoryId": "48b7d863-245d-4c48-968f-9b0dca954609",
+      "name": "Electronics"
+    },
+    {
+      "updated": 1435825256637,
+      "created": 1435825256637,
+      "categoryId": "70a8c6f0-ff74-4889-9603-7304d3eb7c61",
+      "name": "Frozen Foods"
+    },
+    {
+      "updated": 1435825256638,
+      "created": 1435825256638,
+      "categoryId": "8f15f66f-89a6-457b-904d-26b231edec13",
+      "name": "Grocery"
+    },
+    {
+      "updated": 1435825256638,
+      "created": 1435825256638,
+      "categoryId": "5c462c81-fe42-44fb-92bf-b4f95319147d",
+      "name": "Deli"
+    },
+    {
+      "updated": 1435825256638,
+      "created": 1435825256638,
+      "categoryId": "8cb4f92f-6c30-47d2-bac6-ffb2ae1ab8e5",
+      "name": "Bakery"
+    },
+    {
+      "updated": 1435825256638,
+      "created": 1435825256638,
+      "categoryId": "14187575-991c-424b-9d8c-ae10162e623e",
+      "name": "Sports"
+    }
+  ]
+}

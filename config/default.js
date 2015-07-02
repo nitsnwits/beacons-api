@@ -5,7 +5,8 @@ module.exports = {
     baseurl: '/api/v1',
     domain: 'http://salesman-betasjsu.rhcloud.com',
     passwordLength: 8,
-    defaultPhoto: '/default-user-avatar.png'
+    defaultPhoto: '/default-user-avatar.png',
+    updateCategories: true
   },
   database: {
     name: 'mongodb',
@@ -45,5 +46,8 @@ module.exports = {
       acl: 'public-read',
       baseUrl: 'http://s3.amazonaws.com'
     }
+  },
+  semantics: {
+    baseurl: ''
   }
 }
