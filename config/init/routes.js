@@ -49,6 +49,6 @@ module.exports = function(app) {
 	app.delete(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.deleteCategory);
 
 	// Offers routes
-	app.post(baseurl + '/offers', offerController.postOffers);
-	app.get(baseurl + '/offers/:offer_id', offerController.getOffer);
+	app.post(baseurl + '/offers', authController.verifyAccessToken, offerController.postOffers);
+	app.get(baseurl + '/offers/:offer_id', authController.verifyAccessToken, offerController.getOffer);
 }
