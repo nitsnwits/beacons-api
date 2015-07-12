@@ -14,6 +14,13 @@ module.exports = function(app) {
   utils.timestamp = function() {
     return Date.now();
   }
+  utils.timeDifference = function(enddate) {
+    diff = enddate - Date.now();
+    return diff > 0 ? diff : 0;
+  }
+  utils.percentage = function(productPrice, offerPrice) {
+    return String((productPrice - offerPrice)/productPrice * 100) + '%';
+  }
   // delete mongoose internal fields
   utils.transform = function() {
     return function (doc, ret, options) {

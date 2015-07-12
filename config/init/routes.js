@@ -6,6 +6,7 @@ var userController = require('../../app/controllers/users');
 var authController = require('../../app/controllers/auth');
 var productController = require('../../app/controllers/products');
 var categoryController = require('../../app/controllers/categories');
+var offerController = require('../../app/controllers/offers');
 
 module.exports = function(app) {
 	var baseurl = app.locals.config.app.baseurl;
@@ -46,4 +47,8 @@ module.exports = function(app) {
 	app.get(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.getCategory);
 	app.put(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.putCategory);
 	app.delete(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.deleteCategory);
+
+	// Offers routes
+	app.post(baseurl + '/offers', offerController.postOffers);
+	app.get(baseurl + '/offers/:offer_id', offerController.getOffer);
 }

@@ -38,6 +38,14 @@ ProductSchema.statics.findById = function(productId, cb) {
   });
 }
 
+ProductSchema.statics.ifExists = function(productId, cb) {
+  this.findOne({productId: productId}, function(err, product) {
+    if (err) return cb(err);
+    if (validator.isNull(product)) return cb(null, false);
+    return cb(null, true);
+  });
+}
+
 ProductSchema.statics.removeById = function(productId, cb) {
   this.remove({productId: productId}, function(err, product) {
     if (err) return cb(err);
