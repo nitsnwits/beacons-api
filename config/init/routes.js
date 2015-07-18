@@ -7,6 +7,7 @@ var authController = require('../../app/controllers/auth');
 var productController = require('../../app/controllers/products');
 var categoryController = require('../../app/controllers/categories');
 var offerController = require('../../app/controllers/offers');
+var viewController = require('../../app/controllers/views');
 
 module.exports = function(app) {
 	var baseurl = app.locals.config.app.baseurl;
@@ -16,7 +17,7 @@ module.exports = function(app) {
 	
 
 	// Deliver angular app for web backend
-	app.get('/', userController.getRoot);
+	app.get('/', viewController.getRoot);
 	
 	// API Routes: 
 	
@@ -40,9 +41,10 @@ module.exports = function(app) {
 	app.get(baseurl + '/products/:product_id', productController.getProduct);
 	app.put(baseurl + '/products/:product_id', productController.putProduct);
 	app.delete(baseurl + '/products/:product_id', productController.deleteProduct);
+	app.post(baseurl + '/products/:product_id/photo', productController.postProductPhoto);
 
 	// Categories routes
-	app.get(baseurl + '/categories', authController.verifyAccessToken, categoryController.getCategories);
+	app.get(baseurl + '/categories', categoryController.getCategories);
 	app.post(baseurl + '/categories', categoryController.postCategories);
 	app.get(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.getCategory);
 	app.put(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.putCategory);
@@ -51,4 +53,8 @@ module.exports = function(app) {
 	// Offers routes
 	app.post(baseurl + '/offers', authController.verifyAccessToken, offerController.postOffers);
 	app.get(baseurl + '/offers/:offer_id', authController.verifyAccessToken, offerController.getOffer);
+
+	// Admin functionalities, angular app
+	app.get('/admin', viewController.getAdmin);
+	app.get('/products', viewController.getProductConsole);
 }

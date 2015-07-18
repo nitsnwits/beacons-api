@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="salesmanApp">
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- JS -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="app/controllers/ProductCtrl.js"></script>
+    <script src="app/services/ProductService.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/app.js"></script>    
+</head>
+<body>
+  <div class="card">
+    <div class="image">
+      <img src="http://www.rapidrealitytech.com/wp-content/uploads/2013/06/ecommerce-007.jpg">
+      <span class="title">Product Mangement</span>
+    </div>
+    <div class="content">
+      <p>Create, update or remove products from the store</p>
+    </div>
+    <div class="action" ng-controller="ProductController">
+      <a href='/products'>Go to console</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="http://33.media.tumblr.com/e1a2f1b0d3b460941a991a23948401de/tumblr_inline_ndeolbm5PR1rd9i5u.png">
+      <span class="title">Beacon Management</span>
+    </div>
+    <div class="content">
+      <p>Associate beacons to different sections</p>
+    </div>
+    <div class="action">
+      <a href='#beacons'>Go to console</a>
+    </div>
+  </div>
+</body>
+</html>

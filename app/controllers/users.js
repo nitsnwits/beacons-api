@@ -12,11 +12,6 @@ var cache = app.locals.cache.createClient();
 var mailer = require('../../lib/mailer-client');
 var awsClient = require('../../lib/aws-client').createClient();
 
-// TODO: fix root
-module.exports.getRoot = function(req, res) {
-  return res.render('Landing.html');
-}
-
 // Middleware verify user for creation
 module.exports.verifyUser = function(req, res, next) {
   if (_.isEmpty(req.body)) {

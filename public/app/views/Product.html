@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="salesmanApp">
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- JS -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+    <script type="text/javascript" src="app/controllers/products.js"></script>
+</head>
+<body onload="getReady()">
+  <section class="site-container padding-tb">
+    <section class="card wow fadeInLeft">
+      <h3 class="wow fadeInDown" data-wow-delay="0.4s">Create a product</h3>
+      <form action="createProduct()" class="form" method="post">
+          <div class="form__wrapper wow fadeInDown" data-wow-delay="0.5s">
+              <input type="text" class="form__input" id="name" name="name">
+              <label class="form__label" for="name">
+            <span class="form__label-content">Name</span>
+          </label>
+           </div>
+
+          <div class="form__wrapper wow fadeInDown" data-wow-delay="0.6s">
+              <input type="text" class="form__input" id="description"  name="description">
+              <label class="form__label" for="description">
+            <span class="form__label-content">Description</span>
+          </label>
+          </div>
+
+          <div class="form__wrapper wow fadeInDown" data-wow-delay="0.6s">
+            Category<select id="categorySelect" name="categorySelect"><option selected="selected">blank</option></select>
+          </div>
+
+          <div class="form__wrapper wow fadeInDown" data-wow-delay="0.6s">
+              <input type="number" class="form__input" id="price"  name="price">
+              <label class="form__label" for="price">
+            <span class="form__label-content">Price</span>
+          </label>
+          </div>
+
+          <div class="form__wrapper wow fadeInDown" data-wow-delay="0.6s">
+              Image<input type="file" name="photo" id="photo" accept="image/png">
+          </div>
+
+          <div class="form__wrapper--submit wow fadeInLeft" data-wow-delay="0.7s">
+            <div class="form__input-submit">
+                <button type="button" name="submit" id="submit" class="btn btn-block">Submit</button>
+              </div>
+          </div>
+      </form>
+    </section><!-- /card -->
+      </section><!-- /site-container -->
+
+</body>
+</html>

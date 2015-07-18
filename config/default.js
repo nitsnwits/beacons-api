@@ -6,6 +6,7 @@ module.exports = {
     domain: 'http://salesman-betasjsu.rhcloud.com',
     passwordLength: 8,
     defaultPhoto: '/default-user-avatar.png',
+    defaultProductPhoto: '/default-product.png',
     updateCategories: true
   },
   database: {

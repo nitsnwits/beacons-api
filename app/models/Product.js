@@ -6,6 +6,7 @@ var app = require('../../server');
 var mongoose = require('mongoose');
 var validator = require('validator');
 var async = require('async');
+var defaultProductPhoto = app.locals.config.app.domain + app.locals.config.app.defaultProductPhoto;
 
 var product = {
   productId: {type: String, unique: true},
@@ -65,6 +66,20 @@ ProductSchema.statics.search = function(query, cb) {
     async.each(products, transform, function(err) {
       if (err) return cb(err);
       cb(null, results);
+    });
+  });
+}
+
+ProductSchema.statics.setDefaultPhotoById = function(productId, cb) {
+  this.findOne({productId: productId}, function(err, product) {
+    if (err) return cb(err);
+    if (validator.isNull(product)) return cb(null, null);
+    product.set('image', defaultProductPhoto);
+    product.save(function (err) {
+      if (err) {
+        return cb(err);
+      }
+      return cb(null, product.toObject());
     });
   });
 }

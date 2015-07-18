@@ -15,9 +15,9 @@ var log = app.locals.bunyan.createLogger({name: 'server'});
 app.use(express.static(path.join(__dirname, 'public'))); // only public directory will be serve static content
 
 // TODO: fix views forr angular
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/public/app/views');
 app.set('view engine', 'html');
-app.enable('view cache');
+//app.enable('view cache');
 app.engine('html', require('hogan-express'));
 
 // initialization
