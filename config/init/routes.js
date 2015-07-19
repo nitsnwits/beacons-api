@@ -53,6 +53,7 @@ module.exports = function(app) {
 
 	// Offers routes
 	app.post(baseurl + '/offers', offerController.postOffers);
+	app.get(baseurl + '/offers', offerController.getOffers);
 	app.get(baseurl + '/offers/:offer_id', authController.verifyAccessToken, offerController.getOffer);
 
 	// Admin functionalities, angular app

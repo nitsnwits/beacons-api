@@ -95,3 +95,78 @@ module.exports.getOffer = function(req, res) {
   });
 }
 
+function getOffer(offerId, cb) {
+  Offer.findById(offerId, function(err, offer) {
+    if (err) {
+      log.warn('Error from database finding offer', err);
+      return cb(err);
+    }
+    if (validator.isNull(offer)) {
+      log.info('Offer not found');
+      return cb(null, null);
+    }
+    // extract product id for finding the product
+    var productId = offer.get('productId');
+    Product.findById(productId, function(err, product) {
+      if (err) {
+        log.warn('Error from database finding product', err);
+        return cb(err);
+      }
+      if (validator.isNull(product)) {
+        log.info('Product not found');
+        return cb(null, null);
+      }
+      // extract category id for finding category
+      var categoryId = product.get('categoryId');
+      Category.findById(categoryId, function(err, category) {
+        if (err) {
+          log.warn('Error from database finding category', err);
+          return cb(err);
+        }
+        if (validator.isNull(category)) {
+          log.info('Category not found');
+          return cb(null, null);
+        }
+        var result = offer.toObject();
+        result.product = product.toObject();
+        result.category = category.toObject();
+        // decorate offer data with discount and time remaining
+        if (result.product.price && result.offerPrice) {
+          result.discount = app.locals.utils.percentage(result.product.price, result.offerPrice);
+        }
+        if (result.endDate) {
+          result.timeRemaining = app.locals.utils.timeDifference(result.endDate);
+        }
+        return cb(null, result);
+      });
+    });
+  });  
+}
+
+module.exports.getOffers = function(req, res) {
+  Offer.findAll(function(err, offers) {
+    if (err) {
+      log.warn('Error from database finding offers', err);
+      return res.status(500).send(app.locals.errors.code500);
+    }
+    var result = [];
+    function appendToResult(elem, callback) {
+      getOffer(elem.offerId, function(err, offer) {
+        if (err) {
+          callback(err);
+        }
+        if (!validator.isNull(offer)) {
+          result.push(offer);
+        }
+        callback(null);
+      });
+    }
+    async.each(offers, appendToResult, function(err) {
+      if (err) {
+        log.info('Error from get offer: ', err);
+        return res.status(500).send(app.locals.errors.code500);
+      }
+      return res.status(200).send(result);
+    });
+  });  
+}

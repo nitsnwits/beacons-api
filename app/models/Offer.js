@@ -44,6 +44,21 @@ OfferSchema.statics.removeById = function(offerId, cb) {
   });  
 }
 
+OfferSchema.statics.findAll = function(cb) {
+  this.find({}, function(err, offers) {
+    if (err) return cb(err);
+    var results = [];
+    function transform(elem, callback) {
+      results.push(elem.toObject());
+      callback(null);
+    }
+    async.each(offers, transform, function(err) {
+      if (err) return cb(err);
+      cb(null, results);
+    });
+  });
+}
+
 // specify transform schema option
 if (!OfferSchema.options.toObject) OfferSchema.options.toObject = {};
 OfferSchema.options.toObject.transform = app.locals.utils.transform();
