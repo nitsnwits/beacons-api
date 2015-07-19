@@ -73,6 +73,21 @@ CategorySchema.statics.removeById = function(categoryId, cb) {
   });
 }
 
+CategorySchema.statics.findByBeaconId = function(beaconId, cb) {
+  this.find({beaconId: beaconId}, function(err, categories) {
+    if (err) return cb(err);
+    var results = [];
+    function transform(elem, callback) {
+      results.push(elem.toObject());
+      callback(null);
+    }
+    async.each(categories, transform, function(err) {
+      if (err) return cb(err);
+      cb(null, results);
+    });
+  });
+}
+
 // specify transform schema opton
 if (!CategorySchema.options.toObject) CategorySchema.options.toObject = {};
 CategorySchema.options.toObject.transform = app.locals.utils.transform();

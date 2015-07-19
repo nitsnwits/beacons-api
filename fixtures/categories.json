@@ -6,7 +6,11 @@
       "categoryId": "5ca7ccf9-563f-4750-a074-98707b1c1e16",
       "name": "Autocare",
       "xCoord": 0.25,
-      "yCoord": 0.28      
+      "yCoord": 0.28,
+      "beaconName": "Beacon3",
+      "beaconId": "35b1784b-5bb8-4da6-83d4-ee6d01300355",
+      "majorNumber": 6472,
+      "minorNumber": 19249
     },
     {
       "updated": 1435825256635,
@@ -30,7 +34,11 @@
       "categoryId": "570cff2c-c62f-4558-a0c4-7594705c48d0",
       "name": "Apparel",
       "xCoord": 0.25,
-      "yCoord": 0.75      
+      "yCoord": 0.75,
+      "beaconName": "Beacon4",
+      "beaconId": "3f8d0c46-6ac0-4b06-8ab3-03ed50afb43a",
+      "majorNumber": 1233,
+      "minorNumber": 8602      
     },
     {
       "updated": 1435825256636,
@@ -38,7 +46,11 @@
       "categoryId": "f59e7518-40df-41af-9390-876631870d6a",
       "name": "Jewellery",
       "xCoord": 0.25,
-      "yCoord": 0.9      
+      "yCoord": 0.9,
+      "beaconName": "Beacon4",
+      "beaconId": "3f8d0c46-6ac0-4b06-8ab3-03ed50afb43a",
+      "majorNumber": 1233,
+      "minorNumber": 8602        
     },
     {
       "updated": 1435825256636,
@@ -46,7 +58,11 @@
       "categoryId": "2e672056-452c-407a-847d-e4ec8e9c0b9e",
       "name": "Beauty",
       "xCoord": 0.38,
-      "yCoord": 0.78      
+      "yCoord": 0.78,
+      "beaconName": "Beacon4",
+      "beaconId": "3f8d0c46-6ac0-4b06-8ab3-03ed50afb43a",
+      "majorNumber": 1233,
+      "minorNumber": 8602        
     },
     {
       "updated": 1435825256636,
@@ -54,7 +70,11 @@
       "categoryId": "042ba24a-c45f-4db0-80c2-32930605dd31",
       "name": "Cards",
       "xCoord": 0.62,
-      "yCoord": 0.8      
+      "yCoord": 0.8,
+      "beaconName": "Beacon2",
+      "beaconId": "a57622bb-d10e-413b-b669-334c6c793bfc",
+      "majorNumber": 64955,
+      "minorNumber": 60209       
     },
     {
       "updated": 1435825256636,
@@ -70,7 +90,11 @@
       "categoryId": "f7c82af5-d6d3-4eb3-bb38-a4d0283f57c1",
       "name": "Health",
       "xCoord": 0.38,
-      "yCoord": 0.45      
+      "yCoord": 0.45,
+      "beaconName": "Beacon3",
+      "beaconId": "35b1784b-5bb8-4da6-83d4-ee6d01300355",
+      "majorNumber": 6472,
+      "minorNumber": 19249      
     },
     {
       "updated": 1435825256636,
@@ -78,7 +102,11 @@
       "categoryId": "463398cb-42d4-4d0b-b156-65246e9ffafa",
       "name": "Paper & Cleaning",
       "xCoord": 0.62,
-      "yCoord": 0.32      
+      "yCoord": 0.32,
+      "beaconName": "Beacon1",
+      "beaconId": "7ff16ebf-40de-4758-b480-d4345412b6aa",
+      "majorNumber": 10604,
+      "minorNumber": 16545      
     },
     {
       "updated": 1435825256637,
@@ -86,7 +114,11 @@
       "categoryId": "355fb6af-2a27-4b83-86ef-630434e97559",
       "name": "Pets",
       "xCoord": 0.38,
-      "yCoord": 0.2      
+      "yCoord": 0.2,
+      "beaconName": "Beacon3",
+      "beaconId": "35b1784b-5bb8-4da6-83d4-ee6d01300355",
+      "majorNumber": 6472,
+      "minorNumber": 19249      
     },
     {
       "updated": 1435825256637,
@@ -102,7 +134,11 @@
       "categoryId": "e5d34dc8-23ac-46b4-ad55-3ac6df2566da",
       "name": "Home Office",
       "xCoord": 0.75,
-      "yCoord": 0.2      
+      "yCoord": 0.2,
+      "beaconName": "Beacon1",
+      "beaconId": "7ff16ebf-40de-4758-b480-d4345412b6aa",
+      "majorNumber": 10604,
+      "minorNumber": 16545      
     },
     {
       "updated": 1435825256637,
@@ -110,7 +146,11 @@
       "categoryId": "48b7d863-245d-4c48-968f-9b0dca954609",
       "name": "Electronics",
       "xCoord": 0.75,
-      "yCoord": 0.42      
+      "yCoord": 0.42,
+      "beaconName": "Beacon1",
+      "beaconId": "7ff16ebf-40de-4758-b480-d4345412b6aa",
+      "majorNumber": 10604,
+      "minorNumber": 16545       
     },
     {
       "updated": 1435825256637,
@@ -118,7 +158,11 @@
       "categoryId": "70a8c6f0-ff74-4889-9603-7304d3eb7c61",
       "name": "Frozen Foods",
       "xCoord": 0.75,
-      "yCoord": 0.67      
+      "yCoord": 0.67,
+      "beaconName": "Beacon2",
+      "beaconId": "a57622bb-d10e-413b-b669-334c6c793bfc",
+      "majorNumber": 64955,
+      "minorNumber": 60209       
     },
     {
       "updated": 1435825256638,
@@ -126,7 +170,11 @@
       "categoryId": "8f15f66f-89a6-457b-904d-26b231edec13",
       "name": "Grocery",
       "xCoord": 0.75,
-      "yCoord": 0.82      
+      "yCoord": 0.82,
+      "beaconName": "Beacon2",
+      "beaconId": "a57622bb-d10e-413b-b669-334c6c793bfc",
+      "majorNumber": 64955,
+      "minorNumber": 60209        
     },
     {
       "updated": 1435825256638,
@@ -134,7 +182,11 @@
       "categoryId": "5c462c81-fe42-44fb-92bf-b4f95319147d",
       "name": "Deli",
       "xCoord": 0.75,
-      "yCoord": 0.88      
+      "yCoord": 0.88,
+      "beaconName": "Beacon2",
+      "beaconId": "a57622bb-d10e-413b-b669-334c6c793bfc",
+      "majorNumber": 64955,
+      "minorNumber": 60209       
     },
     {
       "updated": 1435825256638,
@@ -150,7 +202,11 @@
       "categoryId": "14187575-991c-424b-9d8c-ae10162e623e",
       "name": "Sports",
       "xCoord": 0.25,
-      "yCoord": 0.1
+      "yCoord": 0.1,
+      "beaconName": "Beacon3",
+      "beaconId": "35b1784b-5bb8-4da6-83d4-ee6d01300355",
+      "majorNumber": 6472,
+      "minorNumber": 19249      
     }
   ]
 }

@@ -56,6 +56,9 @@ module.exports = function(app) {
 	app.get(baseurl + '/offers', offerController.getOffers);
 	app.get(baseurl + '/offers/:offer_id', authController.verifyAccessToken, offerController.getOffer);
 
+	// Beacons routes
+	app.get(baseurl + '/beacons/:beacon_id/offers', offerController.getOffersByBeaconId);
+
 	// Admin functionalities, angular app
 	app.get('/admin', viewController.getAdmin);
 	app.get('/productsConsole', viewController.getProductConsole);

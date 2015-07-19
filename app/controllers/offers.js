@@ -163,10 +163,42 @@ module.exports.getOffers = function(req, res) {
     }
     async.each(offers, appendToResult, function(err) {
       if (err) {
-        log.info('Error from get offer: ', err);
+        log.warn('Error from get offer: ', err);
         return res.status(500).send(app.locals.errors.code500);
       }
       return res.status(200).send(result);
     });
   });  
+}
+
+module.exports.getOffersByBeaconId = function(req, res) {
+  if (!req.params.beacon_id || !validator.isUUID(req.params.beacon_id)) {
+    log.warn('Invalid or no beacon id received');
+    return res.status(400).send(app.locals.errors.code400);
+  }
+  Offer.findAll(function(err, offers) {
+    if (err) {
+      log.warn('Error from database finding offers', err);
+      return res.status(500).send(app.locals.errors.code500);
+    }
+    var result = [];
+    function appendToResult(elem, callback) {
+      getOffer(elem.offerId, function(err, offer) {
+        if (err) {
+          callback(err);
+        }
+        if (!validator.isNull(offer) && (offer.category.beaconId === req.params.beacon_id)) {
+          result.push(offer);
+        }
+        callback(null);
+      });        
+    }
+    async.each(offers, appendToResult, function(err) {
+      if (err) {
+        log.warn('Error from get offer: ', err);
+        return res.status(500).send(app.locals.errors.code500);
+      }
+      return res.status(200).send(result);
+    });      
+  });
 }
