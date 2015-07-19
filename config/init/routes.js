@@ -37,6 +37,7 @@ module.exports = function(app) {
 
 	// Product routes
 	app.get(baseurl + '/products/search', authController.verifyAccessToken, productController.searchProducts);
+	app.get(baseurl + '/products', productController.getProducts);
 	app.post(baseurl + '/products', productController.postProducts);
 	app.get(baseurl + '/products/:product_id', productController.getProduct);
 	app.put(baseurl + '/products/:product_id', productController.putProduct);
@@ -51,10 +52,13 @@ module.exports = function(app) {
 	app.delete(baseurl + '/categories/:category_id', authController.verifyAccessToken, categoryController.deleteCategory);
 
 	// Offers routes
-	app.post(baseurl + '/offers', authController.verifyAccessToken, offerController.postOffers);
+	app.post(baseurl + '/offers', offerController.postOffers);
 	app.get(baseurl + '/offers/:offer_id', authController.verifyAccessToken, offerController.getOffer);
 
 	// Admin functionalities, angular app
 	app.get('/admin', viewController.getAdmin);
-	app.get('/products', viewController.getProductConsole);
+	app.get('/productsConsole', viewController.getProductConsole);
+	app.get('/createProduct', viewController.createProduct);
+	app.get('/listProducts', viewController.listAllProducts);
+	app.get('/createOffer', viewController.createOffer);
 }

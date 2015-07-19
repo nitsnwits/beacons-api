@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="salesmanApp">
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- JS -->
+    <script type="text/javascript" src="app/controllers/listAllProducts.js"></script>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+</head>
+<body onload="getReady()">
+  <div class="container" id="container">
+    <div class="card" id="product">
+      <div class="image" id="imageDiv">
+        <img src="" id="image">
+      </div>
+      <div class="content">
+        <span class="title" id="name"></span>
+        <p id="description"></p>
+      </div>
+      <div class="content">
+        <p id="price"></p>
+      </div>      
+      <div class="action">
+        <a id="link" href='/createOffer'>Create an offer for this product</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

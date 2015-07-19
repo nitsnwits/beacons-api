@@ -18,8 +18,6 @@ function submitProduct() {
       categoryId: mapCategory($('#categorySelect').val()),
       price: $('#price').val()
     }
-    console.log('photo: ' + $('#photo').val());
-    console.log('product: %j', product);
     $.ajax({
       url: '/api/v1/products',
       type: 'POST',

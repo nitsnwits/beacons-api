@@ -81,6 +81,26 @@ module.exports.getProduct = function(req, res) {
   });  
 }
 
+module.exports.getProducts = function(req, res) {
+  Product.findAll(function(err, products) {
+    if (err) {
+      log.warn('Error from database finding products', err);
+      return res.status(500).send(app.locals.errors.code500);
+    }
+    return res.status(200).send(products);
+  });
+}
+
+module.exports.getCategories = function (req, res) {
+  Category.findAll(function(err, categories) {
+    if (err) {
+      log.warn('Unable to retrieve categories', err);
+      return res.status(500).send(app.locals.errors.code500);
+    }
+    return res.status(200).send(categories);
+  });
+}
+
 module.exports.putProduct = function(req, res) {
   if (_.isEmpty(req.body)) {
     log.info('Empty or invalid request body');
