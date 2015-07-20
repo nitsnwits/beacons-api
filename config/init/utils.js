@@ -19,7 +19,7 @@ module.exports = function(app) {
     return diff > 0 ? diff : 0;
   }
   utils.percentage = function(productPrice, offerPrice) {
-    return String((productPrice - offerPrice)/productPrice * 100) + '%';
+    return String(Math.round((productPrice - offerPrice)/productPrice * 100)) + '%';
   }
   // delete mongoose internal fields
   utils.transform = function() {
