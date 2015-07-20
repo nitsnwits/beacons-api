@@ -43,6 +43,7 @@ module.exports = function(app) {
 	app.put(baseurl + '/products/:product_id', productController.putProduct);
 	app.delete(baseurl + '/products/:product_id', productController.deleteProduct);
 	app.post(baseurl + '/products/:product_id/photo', productController.postProductPhoto);
+	app.get(baseurl + '/products/:product_id/recommendations', productController.getRecommendations);
 
 	// Categories routes
 	app.get(baseurl + '/categories', categoryController.getCategories);

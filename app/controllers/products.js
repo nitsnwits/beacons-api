@@ -205,3 +205,46 @@ module.exports.postProductPhoto = function postProductPhoto(req, res) {
     });
   });  
 }
+
+module.exports.getRecommendations = function(req, res) {
+  if (!req.params.product_id || !validator.isUUID(req.params.product_id)) {
+    log.info('Invalid or no product id received');
+    return res.status(400).send(app.locals.errors.code400);
+  }
+  Product.findById(req.params.product_id, function(err, product) {
+    if (err) {
+      log.warn('Error from database finding product', err);
+      return res.status(500).send(app.locals.errors.code500);
+    }
+    if (validator.isNull(product)) {
+      log.info('Product not found');
+      return res.status(404).send(app.locals.errors.code404);
+    }
+    // decorate the data with category information 
+    Category.findById(product.get('categoryId'), function(err, category) {
+      if (err) {
+        log.warn('Error from database finding category', err);
+        return res.status(500).send(app.locals.errors.code500);
+      }
+      if (validator.isNull(category)) {
+        log.info('Category not found');
+        return res.status(404).send(app.locals.errors.code404);
+      }
+      Product.findByCategory(product.get('categoryId'), function(err, products) {
+        if (err) {
+          log.warn('Error from database finding products', err);
+          return res.status(500).send(app.locals.errors.code500);
+        }
+        var result = [];
+        function appendCategory(elem, index, array) {
+          if (elem.productId !== req.params.product_id) {
+            elem.category = category.toObject();
+            result.push(elem);
+          }
+        }
+        products.forEach(appendCategory);
+        return res.status(200).send(result);
+      });
+    });
+  });  
+}

@@ -99,6 +99,21 @@ ProductSchema.statics.findAll = function(cb) {
   });
 }
 
+ProductSchema.statics.findByCategory = function(categoryId, cb) {
+  this.find({categoryId: categoryId}, function(err, products) {
+    if (err) return cb(err);
+    var results = [];
+    function transform(elem, callback) {
+      results.push(elem.toObject());
+      callback(null);
+    }
+    async.each(products, transform, function(err) {
+      if (err) return cb(err);
+      cb(null, results);
+    });    
+  });
+}
+
 // specify transform schema option
 if (!ProductSchema.options.toObject) ProductSchema.options.toObject = {};
 ProductSchema.options.toObject.transform = app.locals.utils.transform();
