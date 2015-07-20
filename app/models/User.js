@@ -20,7 +20,8 @@ var user = {
   userId: {type: String},
   accessToken: {type: String},
   verified: {type: Boolean},
-  photo: {type: String, default: defaultPhoto}
+  photo: {type: String, default: defaultPhoto},
+  notifications: {type: Boolean, default: true}
 }
 var UserSchema = new mongoose.Schema(user, {strict: false, autoIndex: true});
 //UserSchema.set('toJSON', { virtuals: true });
@@ -33,7 +34,9 @@ UserSchema.pre('save', function(next) {
   if (!self.userId) {
     self.userId = app.locals.utils.uuid();
   }
-
+  if (!self.notifications) {
+    self.notifications = true;
+  }
   // set created time
   if (!self.created) {
     self.created = app.locals.utils.timestamp();

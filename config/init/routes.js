@@ -54,7 +54,7 @@ module.exports = function(app) {
 	// Offers routes
 	app.post(baseurl + '/offers', offerController.postOffers);
 	app.get(baseurl + '/offers', offerController.getOffers);
-	app.get(baseurl + '/offers/:offer_id', authController.verifyAccessToken, offerController.getOffer);
+	app.get(baseurl + '/offers/:offer_id', offerController.getOffer);
 
 	// Beacons routes
 	app.get(baseurl + '/beacons/:beacon_id/offers', offerController.getOffersByBeaconId);

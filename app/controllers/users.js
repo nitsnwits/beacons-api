@@ -139,6 +139,9 @@ module.exports.putUser = function putUser(req, res) {
     if (req.body.name.last) {
       user.set('name.last', req.body.name.last);
     }
+    if (req.body.notifications) {
+      user.set('notifications', req.body.notifications);
+    }
     user.save(function(err) {
       if (err) {
         log.warn('Error from database', err);
