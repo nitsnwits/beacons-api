@@ -12,10 +12,10 @@ module.exports = function(app) {
     return uuid.v4();
   }
   utils.timestamp = function() {
-    return Date.now();
+    return Date.now()/1000;
   }
   utils.timeDifference = function(enddate) {
-    diff = enddate - Date.now();
+    var diff = enddate - Date.now()/1000;
     return diff > 0 ? diff : 0;
   }
   utils.percentage = function(productPrice, offerPrice) {

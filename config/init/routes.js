@@ -36,7 +36,7 @@ module.exports = function(app) {
 	app.post(baseurl + '/users/:user_id/photo', authController.verifyAccessToken, userController.postUserPhoto);
 
 	// Product routes
-	app.get(baseurl + '/products/search', authController.verifyAccessToken, productController.searchProducts);
+	app.get(baseurl + '/products/search', productController.searchProducts);
 	app.get(baseurl + '/products', productController.getProducts);
 	app.post(baseurl + '/products', productController.postProducts);
 	app.get(baseurl + '/products/:product_id', productController.getProduct);
