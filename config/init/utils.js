@@ -16,7 +16,7 @@ module.exports = function(app) {
   }
   utils.timeDifference = function(enddate) {
     var diff = enddate - Date.now()/1000;
-    return diff > 0 ? diff : 0;
+    return diff > 0 ? Math.round(diff) : 0;
   }
   utils.percentage = function(productPrice, offerPrice) {
     return String(Math.round((productPrice - offerPrice)/productPrice * 100)) + '%';
