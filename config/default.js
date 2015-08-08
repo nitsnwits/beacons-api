@@ -14,14 +14,14 @@ module.exports = {
     mongo: {
       // fall back to localhost if not deploying to openshift
       url: process.env.OPENSHIFT_NODEJS_IP
-          ? 'mongodb://admin:I6NumDATJ4qC@127.13.147.130:27017/salesman'
-          : 'mongodb://localhost/salesman'
+          ? ''
+          : ''
     }
   },
   cache: {
     name: 'redis',
     openshift: process.env.OPENSHIFT_REDIS_HOST
-            ? 'ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5'
+            ? ''
             : undefined,
     port: process.env.OPENSHIFT_REDIS_PORT || 6379,
     ip: process.env.OPENSHIFT_REDIS_HOST || '127.0.0.1'
