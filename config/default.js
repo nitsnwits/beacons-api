@@ -37,7 +37,7 @@ module.exports = {
   },
   mailer: {
     email: 'salesman.betasjsu@gmail.com',
-    password: 'Salesman',
+    password: '',
     service: 'gmail'    
   },
   aws: {
